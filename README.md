@@ -2,4 +2,4 @@
 CS30
 Pong Easter Eggs:
  -ball moves faster over time
- -depending on where ball hits paddle, ball moves in different angle
+ -depending on where ball hits paddle, ball moves in different angle. (paddle made up of multiple segments)
