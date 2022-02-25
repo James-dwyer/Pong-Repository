@@ -21,8 +21,8 @@ void setup() {
   population();
 
   ballYSpeed = int(random(-4, 4));
-  //ballXSpeed = int(random(-9, 9));
-  ballXSpeed  = 18;
+  ballXSpeed = int(random(-9, 9));
+
   while (ballYSpeed == 0) ballYSpeed = int(random(-4, 4));
   while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
 };
