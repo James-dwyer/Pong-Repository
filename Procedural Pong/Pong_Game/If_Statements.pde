@@ -46,23 +46,57 @@ void ifStatements() {
     ballXSpeed = ballXSpeed += 1;
   };
 
-  if(ballXSpeed >= 10 || ballXSpeed <= -10){ ballColor = #FF00FF;}
-  if (ballXSpeed >= 20 || ballXSpeed <= -20) { 
+  if(ballXSpeed >= 10 || ballXSpeed <= -10){ ballColor = #FF00FF;}  
+  if (ballXSpeed >= 25 || ballXSpeed <= -25) { 
     if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
       ballXSpeed = ballXSpeed *=-1;
-      ballXSpeed = -20;
+      ballXSpeed = -25;
       ballYSpeed = int(random(-6,6));
       if(ballYSpeed == 0){int(random(-6,6));};
     ; 
     };
     if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
       ballXSpeed = ballXSpeed *=-1;
-      ballXSpeed = 20;
+      ballXSpeed = 25;
       ballYSpeed = int(random(-6,6));
       if(ballYSpeed == 0){int(random(-6,6));};
      ; 
     };
   }
+  
+  
+  //if (ballXSpeed >= 17 || ballXSpeed <= -17) { 
+  //  if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
+  //    ballXSpeed = ballXSpeed *=-1;
+  //    ballXSpeed -= 1;
+  //    ballYSpeed = int(random(-6,6));
+  //    if(ballYSpeed == 0){int(random(-6,6));};
+  //  ; 
+  //  };
+  //  if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
+  //    ballXSpeed = ballXSpeed *=-1;
+  //    ballXSpeed += 1;
+  //    ballYSpeed = int(random(-6,6));
+  //    if(ballYSpeed == 0){int(random(-6,6));};
+  //   ; 
+  //  };
+  //}
+ //if (ballXSpeed >= 25 || ballXSpeed <= -25) { 
+ //   if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
+ //     ballXSpeed = ballXSpeed *=-1;
+ //     ballXSpeed = 25;
+ //     ballYSpeed = int(random(-6,6));
+ //     if(ballYSpeed == 0){int(random(-6,6));};
+ //   ; 
+ //   };
+ //   if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
+ //     ballXSpeed = ballXSpeed *=-1;
+ //     ballXSpeed = 25;
+ //     ballYSpeed = int(random(-6,6));
+ //     if(ballYSpeed == 0){int(random(-6,6));};
+ //    ; 
+ //   };
+ // }
   if(rightPaddleUp == true) rightPaddleY += leftPaddleSpeed;
   if(rightPaddleDown == true) rightPaddleY -= leftPaddleSpeed;
   if(leftPaddleUp == true) leftPaddleY += leftPaddleSpeed;
