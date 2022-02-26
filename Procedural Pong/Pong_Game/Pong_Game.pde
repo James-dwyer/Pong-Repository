@@ -21,8 +21,8 @@ void setup() {
   population();
 
   ballYSpeed = int(random(-4, 4));
-  //ballXSpeed = int(random(-9, 9));
-  ballXSpeed = 15;
+  ballXSpeed = int(random(-9, 9));
+ 
   while (ballYSpeed == 0) ballYSpeed = int(random(-4, 4));
   while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
 };
@@ -34,14 +34,16 @@ void draw() {
   if(width>height){
   gameStart();
   println(ballXSpeed);
-  }else{println("flip Screen to play");};
+  }else{
+  println("ERROR: Change Display to Landscape");
+  exit();};
   
 
   
 };
 
 void keyPressed() {
-  if (key == 'q') {
+  if (key == 'q' || key == 'Q') {
     exit();
   };
   
