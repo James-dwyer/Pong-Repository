@@ -8,6 +8,8 @@ void population() {
   rulesFont = createFont("arial",60);
   winRules = "Score 3 Goals To Win The Game!";
   leftPaddleRules = "Press E for Slow, Press B for Regular, Press F for Fast";
+  rightPaddleRules = "Press G for Slow, Press R for Regular, Press N for Fast";
+  beginRules = "Press M to Start the Game. Press Q at anytime to Quit the game";
   textFont(rulesFont);
   textAlign (CENTER, CENTER);
   ballX = width*1/2;
