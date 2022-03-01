@@ -35,15 +35,15 @@ void draw() {
   }else{println("flip Screen to play");};
   
 
-  
+
 };
 
 void keyPressed() {
-  if (key == 'q') {
+  if (key == 'q' || key == 'Q') {
     exit();
   };
-  
+
   leftPaddleKeyPressed();
   rightPaddleKeyPressed();
-  
+
 }
