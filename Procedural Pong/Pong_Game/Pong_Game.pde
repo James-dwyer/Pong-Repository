@@ -6,11 +6,14 @@ float sB1X, sB2X, sB1Y, sB2Y, sB1Width, sB2Width, sB2Height, sB1Height;
 float lineX, lineY, lineY2;
 boolean leftGoalScore, rightGoalScore;
 int ballXSpeed, ballYSpeed;
-PFont scoreFont;
-String score1, score2;
+PFont scoreFont, rulesFont;
+String score1, score2,winRules,leftPaddleRules,rightPaddleRules,beginRules;
 boolean player1, player2;
 color ballColor = 255;
-
+float leftPaddleSpeedX, leftPaddleSpeedY, paddleSpeedWidth, paddleSpeedHeight, rightPaddleSpeedY, rightPaddleSpeedX;
+float rulesX,rulesY,rulesWidth,rulesHeight;
+float beginX,beginY,beginWidth,beginHeight;
+boolean rules = true, leftPaddle = false, rightPaddle = false;
 
 ;
 
@@ -31,7 +34,9 @@ void setup() {
 void draw() {
 
   if(width>height){
-  gameStart();
+    if(rules == false && leftPaddle == true && rightPaddle == true){gameStart();}
+      else startPage();
+    ;
   }else{println("flip Screen to play");};
   
 

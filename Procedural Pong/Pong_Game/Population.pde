@@ -2,9 +2,14 @@ void population() {
   scoreFont = createFont("Harrington", 60);
   score1 = "0";
   score2 = "0";
-  textAlign (CENTER, CENTER);
+  
   textFont(scoreFont);
   
+  rulesFont = createFont("arial",60);
+  winRules = "Score 3 Goals To Win The Game!";
+  leftPaddleRules = "Press E for Slow, Press B for Regular, Press F for Fast";
+  textFont(rulesFont);
+  textAlign (CENTER, CENTER);
   ballX = width*1/2;
   ballY= height*1/2;
   ballWidth = width*1/75;
@@ -44,4 +49,21 @@ void population() {
   lineX = width*1/2;
   lineY = height*0;
   lineY2 = height;
+  
+  rulesX = width*1/5;
+  rulesY = height*1/15;
+  rulesWidth = width*3/5;
+  rulesHeight = height*2/15;
+  
+  leftPaddleSpeedX = width*1/10;
+  leftPaddleSpeedY = height*2/7;
+  paddleSpeedWidth = width*2/8;
+  paddleSpeedHeight = height*1/5;
+  rightPaddleSpeedX = width - leftPaddleSpeedX - paddleSpeedWidth;
+  rightPaddleSpeedY = height*2/7;
+  
+  beginX = width*3/10;
+  beginY = height*4/7;
+  beginWidth = width*2/5;
+  beginHeight = height*1/8;
 }

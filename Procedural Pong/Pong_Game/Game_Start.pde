@@ -12,11 +12,10 @@ void gameStart() {
   leftPaddleCreate();
   rightPaddleCreate();
 
-
+  fill(225);
   rect(sB1X, sB1Y, sB1Width, sB1Height);
-
   rect(sB2X, sB2Y, sB2Width, sB2Height);
-
+  fill(255);
 
   fill(0);
   text(score1, sB1X, sB1Y, sB1Width, sB1Height);
