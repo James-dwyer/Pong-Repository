@@ -1,16 +1,19 @@
 void population() {
   scoreFont = createFont("Harrington", 60);
   score1 = "0";
-  score2 = "0";
-  
+  score2 = "0"; 
   textFont(scoreFont);
   
   rulesFont = createFont("arial",60);
   winRules = "Score 3 Goals To Win The Game!";
-  leftPaddleRules = "Press E for Slow, Press B for Regular, Press F for Fast";
-  rightPaddleRules = "Press G for Slow, Press R for Regular, Press N for Fast";
-  beginRules = "Press M to Start the Game. Press Q at anytime to Quit the game";
+  beginRules = "To Start The Game Click HERE! Press Q at anytime to Quit the game";
   textFont(rulesFont);
+  
+  paddleFont = createFont("arial",30);
+  leftPaddleRules = "FOR LEFT PADDLE: Press E for Slow, Press B for Regular, Press F for Fast!";
+  rightPaddleRules = "FOR RIGHT PADDLE: Press G for Slow, Press R for Regular, Press N for Fast!";
+  textFont(paddleFont);
+  
   textAlign (CENTER, CENTER);
   ballX = width*1/2;
   ballY= height*1/2;
@@ -58,9 +61,9 @@ void population() {
   rulesHeight = height*2/15;
   
   leftPaddleSpeedX = width*1/10;
-  leftPaddleSpeedY = height*2/7;
+  leftPaddleSpeed1Y = height*2/7;
   paddleSpeedWidth = width*2/8;
-  paddleSpeedHeight = height*1/5;
+  paddleSpeedHeight = height*1/20;
   rightPaddleSpeedX = width - leftPaddleSpeedX - paddleSpeedWidth;
   rightPaddleSpeedY = height*2/7;
   

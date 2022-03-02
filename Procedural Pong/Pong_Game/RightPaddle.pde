@@ -21,36 +21,26 @@ void rightPaddleKeyPressed() {
    if(key == '2'){
   rightPaddleAI = true;
   } 
-  //if (key == 'l') {
-  //    rightPaddleUp = true;
-  //    rightPaddleDown = false;
-  //  }
-  //  if (key == 'o') {
-  //    rightPaddleUp = false;
-  //    rightPaddleDown = true;
-  //  }
-  //  if (key == 'k') {
-  //  }
-  //  rightPaddleDown = false;
-  //  rightPaddleUp = false;
-  //  ;
 
 
-  //if(rightPaddleSpeed == 0){
+  if(rightPaddleSpeed == 0){
 
-  //if(key == 'n' || key == 'N'){
-  //rightPaddleSpeed = -2;
+  if(key == 'g' || key == 'G'){
+  rightPaddleSpeed = -2;
+  rightPaddle = true;
 
-  //};
-  //if(key == 'f' || key == 'F'){
-  //rightPaddleSpeed = -6;
+  };
+  if(key == 'r' || key == 'R'){
+  rightPaddleSpeed = -6;
+  rightPaddle = true;
 
-  //};
-  //if(key == 'g' || key == 'G'){
-  //rightPaddleSpeed = -10;
-  //}
-  //;
-  //}
+  };
+  if(key == 'n' || key == 'N'){
+  rightPaddleSpeed = -10;
+  rightPaddle = true;
+  }
+  ;
+  }
 };
 
 void rightPaddleCreate() {

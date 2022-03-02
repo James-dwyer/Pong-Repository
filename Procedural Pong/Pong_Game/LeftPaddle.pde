@@ -25,14 +25,17 @@ void leftPaddleKeyPressed() {
   rightPaddleAI = true;
   };
   if (leftPaddleSpeed == 0) {
-    if (key == 'n' || key == 'N') {
+    if (key == 'e' || key == 'E') {
       leftPaddleSpeed = -2;
+      leftPaddle = true;
+    };
+    if (key == 'b' || key == 'B') {
+      leftPaddleSpeed = -6;
+      leftPaddle = true;
     };
     if (key == 'f' || key == 'F') {
-      leftPaddleSpeed = -6;
-    };
-    if (key == 'g' || key == 'G') {
       leftPaddleSpeed = -10;
+      leftPaddle = true;
     }
     ;
   };

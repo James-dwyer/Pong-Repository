@@ -25,16 +25,16 @@ void ifStatements() {
     ballX = (width)-ballWidth/2;
   }
   if (leftPaddleY < height*0) {
-    leftPaddleY = leftPaddleY += leftPaddleSpeed*-1;
+    leftPaddleY = height*0;
   };
   if (leftPaddleY+leftPaddleHeight > height) {
-    leftPaddleY -= leftPaddleSpeed*-1;
+    leftPaddleY = height-leftPaddleHeight;
   };
    if (rightPaddleY < height*0) {
-    rightPaddleY = rightPaddleY += rightPaddleSpeed*-1;
+    rightPaddleY = height*0;
   };
   if (rightPaddleY+rightPaddleHeight > height) {
-    rightPaddleY -= rightPaddleSpeed*-1;
+    rightPaddleY = height-rightPaddleHeight;
   };
  
   if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
