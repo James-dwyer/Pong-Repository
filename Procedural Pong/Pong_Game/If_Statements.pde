@@ -68,8 +68,8 @@ void ifStatements() {
   
   
  
-  if(rightPaddleUp == true) rightPaddleY += leftPaddleSpeed;
-  if(rightPaddleDown == true) rightPaddleY -= leftPaddleSpeed;
+  if(rightPaddleUp == true) rightPaddleY += rightPaddleSpeed;
+  if(rightPaddleDown == true) rightPaddleY -= rightPaddleSpeed;
   if(leftPaddleUp == true) leftPaddleY += leftPaddleSpeed;
   if(leftPaddleDown == true) leftPaddleY -= leftPaddleSpeed;
  

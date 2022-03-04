@@ -74,7 +74,7 @@ void mousePressed(){
  leftPaddleSpeed = -10;
  leftPaddle = true;
  };
- }else leftPaddle = false;
+ }
 
  if(rightPaddleSpeed == 0){
  if(mouseX >= rightPaddleSpeedX && mouseX <= rightPaddleSpeedX+paddleSpeedWidth && mouseY >= leftPaddleSpeed1Y && mouseY <= leftPaddleSpeed1Y+paddleSpeedHeight){
@@ -89,6 +89,6 @@ void mousePressed(){
  rightPaddleSpeed = -10;
  rightPaddle = true;
  };
- }
+ };
  
 };
