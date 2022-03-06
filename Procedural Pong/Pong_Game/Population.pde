@@ -10,7 +10,7 @@ void population() {
   winRules = "Score 3 Goals To Win The Game!";
   beginRules = "To Start The Game Click HERE! Press Q at anytime to Quit the game";
   winText = "Click Here to Play Again!";
-  winText1 = "Click Here to Quit!";
+  winText1 = "Click Here to Quit the Game!";
   textFont(rulesFont);
 
   paddleFont = createFont("arial", 30);

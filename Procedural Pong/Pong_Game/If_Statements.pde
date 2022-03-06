@@ -16,10 +16,10 @@ void ifStatements() {
   if (rightPaddleAI == true) {
     rightPaddleY = ballY-rightPaddleHeight/2;
   };
-  if (ballX-ballWidth/2<=leftNetX) {
+  if (ballX-ballWidth/2<=leftNetX/2) {
     leftGoalScore = true;
     ballX = (width*0)+ballWidth/2;
-  } else if (ballX+ballWidth/2 >= rightNetX)
+  } else if (ballX+ballWidth/2 >= rightNetX+width*1/50)
   {
     rightGoalScore=true;
     ballX = (width)-ballWidth/2;
@@ -83,7 +83,6 @@ void ifStatements() {
 
 
 
-
   if (leftGoalScore == true && score1 == "0") {
     score1 = "1";
     ballX = width*1/2;
@@ -109,7 +108,7 @@ void ifStatements() {
     leftGoalScore = false;
     win = true;
     player1Win = true;
-    //rules = true;leftPaddle = false;rightPaddle = false;
+    rules = true;leftPaddle = false;rightPaddle = false;
   };
 
   if (rightGoalScore == true && score2 == "0") {

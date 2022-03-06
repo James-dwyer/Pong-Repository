@@ -1,5 +1,6 @@
 void winScreen () {
   background(225);
+
   rect(rulesX, height*2/5, rulesWidth, rulesHeight);
   rect(button1X, buttonY, buttonWidth, buttonHeight);
   rect(button2X, buttonY, buttonWidth, buttonHeight);

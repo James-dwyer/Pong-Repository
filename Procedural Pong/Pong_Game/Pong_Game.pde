@@ -7,7 +7,7 @@ float lineX, lineY, lineY2;
 boolean leftGoalScore, rightGoalScore;
 int ballXSpeed, ballYSpeed;
 PFont scoreFont, rulesFont, paddleFont;
-String score1, score2, winRules, leftPaddleRules, leftPaddleRules1, leftPaddleRules2, leftPaddleRules3, rightPaddleRules, beginRules, winText, leftWin, rightWin, winText1;
+String score1 = "0", score2 = "0", winRules, leftPaddleRules, leftPaddleRules1, leftPaddleRules2, leftPaddleRules3, rightPaddleRules, beginRules, winText, leftWin, rightWin, winText1;
 boolean player1, player2;
 color ballColor = 255, white = 255, black=0, red = #FF0000, orange = #FF7000, blue = #0000FF, beginColor = black, winColor = black, winColor1 = black, slowColor1 = blue, normalColor1 = orange, fastColor1 = red, slowColor = blue, normalColor = orange, fastColor = red;
 float leftPaddleSpeedX, leftPaddleSpeedY, leftPaddleSpeed1Y, leftPaddleSpeed2Y, leftPaddleSpeed3Y, paddleSpeedWidth, paddleSpeedHeight, rightPaddleSpeedY, rightPaddleSpeedX;
@@ -30,8 +30,8 @@ void setup() {
   population();
 
   ballYSpeed = int(random(-4, 4));
-  //ballXSpeed = int(random(-9, 9));
-  ballXSpeed = -18;
+  ballXSpeed = int(random(-9, 9));
+
   while (ballYSpeed == 0) ballYSpeed = int(random(-4, 4));
   while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
 };
@@ -90,10 +90,30 @@ void mousePressed() {
       rightPaddle = true;
     };
   };
-  if (mouseX >= button2X && mouseX <= button2X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight) {
-    exit();
-  }
+ if(win == true){
+  if (mouseX >= button1X && mouseX <= button1X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
+  
+  rightPaddleSpeed = 0;
+  leftPaddleSpeed = 0;
+  leftPaddle = false;
+  rightPaddle = false;
+  rules=true;
+  score1 = "0";
+  score2 = "0";
+  ballX = width/2;
+  ballY = height/2;
+  leftPaddleY = height*1/2-leftPaddleHeight/2;
+  rightPaddleY = height*1/2-rightPaddleHeight/2;
+  leftPaddleDown = false;
+  leftPaddleUp = false;
+  rightPaddleUp = false;
+  rightPaddleDown = false;
+  win=false;
+  };
+   if (mouseX >= button2X && mouseX <= button2X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
+   exit();
+   };
+
+
+};
 }
-
-
-= && 

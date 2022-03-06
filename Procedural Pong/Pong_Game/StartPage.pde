@@ -1,4 +1,5 @@
 void startPage() {
+  background(225);
   rect(rulesX, rulesY, rulesWidth, rulesHeight);
   rect(leftPaddleSpeedX, leftPaddleSpeedY, paddleSpeedWidth, paddleSpeedHeight);
   rect(leftPaddleSpeedX, leftPaddleSpeed1Y, paddleSpeedWidth, paddleSpeedHeight);

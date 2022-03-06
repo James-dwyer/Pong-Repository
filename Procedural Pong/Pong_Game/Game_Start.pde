@@ -1,5 +1,6 @@
 void gameStart() {
   background(225);
+  
   ballY += ballYSpeed;
   ballX -= ballXSpeed;
   line(leftNetX, netY, leftNetX, netY2);
