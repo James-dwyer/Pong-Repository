@@ -4,19 +4,23 @@ void population() {
   score2 = "0"; 
   textFont(scoreFont);
   //Press E for Slow, Press B for Regular, Press F for Fast!
-  rulesFont = createFont("arial",60);
+  rulesFont = createFont("arial", 60);
+  leftWin = "Left Player Wins";
+  rightWin = "Right Player Wins";
   winRules = "Score 3 Goals To Win The Game!";
   beginRules = "To Start The Game Click HERE! Press Q at anytime to Quit the game";
+  winText = "Click Here to Play Again!";
+  winText1 = "Click Here to Quit!";
   textFont(rulesFont);
-  
-  paddleFont = createFont("arial",30);
+
+  paddleFont = createFont("arial", 30);
   leftPaddleRules = "FOR LEFT PADDLE:";
   leftPaddleRules1 = "Click Here for Slow Paddle";
   leftPaddleRules2 = "Click Here for Regular Paddle";
   leftPaddleRules3 = "Click Here for Fast Paddle";
   rightPaddleRules = "FOR RIGHT PADDLE:";
   textFont(paddleFont);
-  
+
   textAlign (CENTER, CENTER);
   ballX = width*1/2;
   ballY= height*1/2;
@@ -57,12 +61,12 @@ void population() {
   lineX = width*1/2;
   lineY = height*0;
   lineY2 = height;
-  
+
   rulesX = width*1/5;
   rulesY = height*1/15;
   rulesWidth = width*3/5;
   rulesHeight = height*2/15;
-  
+
   leftPaddleSpeedX = width*1/10;
   leftPaddleSpeedY = height*3/10;
   leftPaddleSpeed1Y = height*4/10;
@@ -72,9 +76,16 @@ void population() {
   paddleSpeedHeight = height*1/20;
   rightPaddleSpeedX = width - leftPaddleSpeedX - paddleSpeedWidth;
   rightPaddleSpeedY = height*2/7;
-  
+
   beginX = width*3/10;
   beginY = height*5/7;
   beginWidth = width*2/5;
   beginHeight = height*1/8;
+
+  button1X = width*1/7;
+
+  buttonHeight = height*1/8;
+  buttonWidth = width*1/4;
+  buttonY = height*5/7;
+  button2X = width-button1X-buttonWidth;
 }

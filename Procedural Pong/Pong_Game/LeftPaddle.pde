@@ -1,7 +1,7 @@
 boolean leftPaddleUp = false, leftPaddleDown = false;
 boolean leftPaddleAI = false;
 void leftPaddleKeyPressed() {
-    
+
   if (key == 'w'|| key == 'W') {
     leftPaddleUp = true;
     leftPaddleDown = false;
@@ -12,17 +12,17 @@ void leftPaddleKeyPressed() {
     leftPaddleDown = true;
     leftPaddleAI = false;
   };
-  if(key == 'a' || key == 'A'){
-  leftPaddleUp = false;
-  leftPaddleDown = false;
-  leftPaddleAI = false;
+  if (key == 'a' || key == 'A') {
+    leftPaddleUp = false;
+    leftPaddleDown = false;
+    leftPaddleAI = false;
   };
-  if(key == '1'){
-  leftPaddleAI = true;
+  if (key == '1') {
+    leftPaddleAI = true;
   } 
-  if(key == '3'){
-  leftPaddleAI = true;
-  rightPaddleAI = true;
+  if (key == '3') {
+    leftPaddleAI = true;
+    rightPaddleAI = true;
   };
   if (leftPaddleSpeed == 0) {
     if (key == 'e' || key == 'E') {
@@ -41,7 +41,6 @@ void leftPaddleKeyPressed() {
   };
 }
 
-void leftPaddleCreate(){
-rect(leftPaddleX, leftPaddleY, leftPaddleWidth, leftPaddleHeight);
-
+void leftPaddleCreate() {
+  rect(leftPaddleX, leftPaddleY, leftPaddleWidth, leftPaddleHeight);
 };

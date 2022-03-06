@@ -22,7 +22,4 @@ void gameStart() {
   text(score2, sB2X, sB2Y, sB2Width, sB2Height);
   fill(255);
   ifStatements();
-
-
- 
 }
