@@ -17,11 +17,11 @@ void ifStatements() {
     rightPaddleY = ballY-rightPaddleHeight/2;
   };
   if (ballX-ballWidth/2<=leftNetX/2) {
-    leftGoalScore = true;
+    rightGoalScore = true;
     ballX = (width*0)+ballWidth/2;
   } else if (ballX+ballWidth/2 >= rightNetX+width*1/50)
   {
-    rightGoalScore=true;
+    leftGoalScore=true;
     ballX = (width)-ballWidth/2;
   }
   if (leftPaddleY < height*0) {
@@ -45,10 +45,26 @@ void ifStatements() {
     ballXSpeed = ballXSpeed *=-1;
     ballXSpeed = ballXSpeed += 1;
   };
-
-  if (ballXSpeed >= 10 || ballXSpeed <= -10) { 
+  
+  if(ballXSpeed > 18 && ballXSpeed < 25){
+  ballColor = #00FFFF;
+  };
+  if(ballXSpeed < -18 && ballXSpeed > -25){
+  ballColor = #00FFFF;
+  };
+  
+  if (ballXSpeed >= 10 && ballXSpeed <= 18) { 
     ballColor = #FF00FF;
   }  
+  if (ballXSpeed <= -10 && ballXSpeed >= -18){
+    ballColor = #FF00FF;
+  };
+  if (ballXSpeed <10 && ballXSpeed > 0){
+    ballColor = white;
+  };
+  if (ballXSpeed > -10 && ballXSpeed <0){
+    ballColor = white;
+  };
   if (ballXSpeed >= 25 || ballXSpeed <= -25) { 
     if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
       ballXSpeed = ballXSpeed *=-1;
@@ -57,8 +73,8 @@ void ifStatements() {
       while (ballYSpeed == 0) {
         ballYSpeed = int(random(-9, 9));
       };
-      if (ballY+ballHeight == height)ballYSpeed *= -1; 
-      ;
+      if (ballY+ballHeight >= height)ballYSpeed *= -1; 
+      if(ballY-ballHeight <= height*0)ballYSpeed *= -1;
     };
     if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
       ballXSpeed = ballXSpeed *=-1;
@@ -107,7 +123,7 @@ void ifStatements() {
     score1 = "3";
     leftGoalScore = false;
     win = true;
-    player1Win = true;
+    player2Win = true;
     rules = true;leftPaddle = false;rightPaddle = false;
   };
 
@@ -135,7 +151,7 @@ void ifStatements() {
     score2 = "3";
     rightGoalScore = false;
     win = true;
-    player2Win = true;
+    player1Win = true;
     //rules = true;leftPaddle = false;rightPaddle = false;
   };
 };

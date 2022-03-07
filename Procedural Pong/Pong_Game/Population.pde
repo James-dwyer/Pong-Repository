@@ -5,14 +5,15 @@ void population() {
   textFont(scoreFont);
   //Press E for Slow, Press B for Regular, Press F for Fast!
   rulesFont = createFont("arial", 60);
-  leftWin = "Left Player Wins";
-  rightWin = "Right Player Wins";
+  leftWin = "Right Player Wins";
+  rightWin = "Left Player Wins";
   winRules = "Score 3 Goals To Win The Game!";
   beginRules = "To Start The Game Click HERE! Press Q at anytime to Quit the game";
   winText = "Click Here to Play Again!";
   winText1 = "Click Here to Quit the Game!";
   typeText = "One Player";
   typeText1 = "Two Players";
+  screenSaverText = "Screen Saver!";
   textFont(rulesFont);
 
   paddleFont = createFont("arial", 30);
@@ -69,10 +70,11 @@ void population() {
   rulesWidth = width*3/5;
   rulesHeight = height*2/15;
 
-  typeX = width*2/5;
+  //typeX = width*1/2 - typeWidth/2;
   typeY= height*1/3;
   typeHeight = height*1/20;
   typeWidth = width*1/6;
+  typeX = width*1/2 - typeWidth/2;
 
   type1Y = height*2/4;
 
@@ -97,4 +99,6 @@ void population() {
   buttonWidth = width*1/4;
   buttonY = height*5/7;
   button2X = width-button1X-buttonWidth;
+  
+  screenSaverY = height*8/9;
 }

@@ -22,5 +22,9 @@ void gameStart() {
   text(score1, sB1X, sB1Y, sB1Width, sB1Height);
   text(score2, sB2X, sB2Y, sB2Width, sB2Height);
   fill(255);
+  
+   fill(ballColor);
+  ellipse(ballX, ballY, ballWidth, ballHeight);
+  fill(255);
   ifStatements();
 }

@@ -22,22 +22,7 @@ void rightPaddleKeyPressed() {
   } 
 
 
-  if (rightPaddleSpeed == 0) {
-
-    if (key == 'g' || key == 'G') {
-      rightPaddleSpeed = -2;
-      rightPaddle = true;
-    };
-    if (key == 'r' || key == 'R') {
-      rightPaddleSpeed = -6;
-      rightPaddle = true;
-    };
-    if (key == 'n' || key == 'N') {
-      rightPaddleSpeed = -10;
-      rightPaddle = true;
-    }
-    ;
-  }
+  
 };
 
 void rightPaddleCreate() {
