@@ -11,14 +11,16 @@ void population() {
   beginRules = "To Start The Game Click HERE! Press Q at anytime to Quit the game";
   winText = "Click Here to Play Again!";
   winText1 = "Click Here to Quit the Game!";
+  typeText = "One Player";
+  typeText1 = "Two Players";
   textFont(rulesFont);
 
   paddleFont = createFont("arial", 30);
-  leftPaddleRules = "FOR LEFT PADDLE:";
+  leftPaddleRules = "LEFT PADDLE: W and S";
   leftPaddleRules1 = "Click Here for Slow Paddle";
   leftPaddleRules2 = "Click Here for Regular Paddle";
   leftPaddleRules3 = "Click Here for Fast Paddle";
-  rightPaddleRules = "FOR RIGHT PADDLE:";
+  rightPaddleRules = "RIGHT PADDLE: Up and Down";
   textFont(paddleFont);
 
   textAlign (CENTER, CENTER);
@@ -66,6 +68,13 @@ void population() {
   rulesY = height*1/15;
   rulesWidth = width*3/5;
   rulesHeight = height*2/15;
+
+  typeX = width*2/5;
+  typeY= height*1/3;
+  typeHeight = height*1/20;
+  typeWidth = width*1/6;
+
+  type1Y = height*2/4;
 
   leftPaddleSpeedX = width*1/10;
   leftPaddleSpeedY = height*3/10;

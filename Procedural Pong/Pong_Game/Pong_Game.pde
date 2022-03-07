@@ -7,16 +7,17 @@ float lineX, lineY, lineY2;
 boolean leftGoalScore, rightGoalScore;
 int ballXSpeed, ballYSpeed;
 PFont scoreFont, rulesFont, paddleFont;
-String score1 = "0", score2 = "0", winRules, leftPaddleRules, leftPaddleRules1, leftPaddleRules2, leftPaddleRules3, rightPaddleRules, beginRules, winText, leftWin, rightWin, winText1;
+String score1 = "0", score2 = "0", winRules, leftPaddleRules, leftPaddleRules1, leftPaddleRules2, leftPaddleRules3, rightPaddleRules, beginRules, winText, leftWin, rightWin, winText1,typeText,typeText1;
 boolean player1, player2;
-color ballColor = 255, white = 255, black=0, red = #FF0000, orange = #FF7000, blue = #0000FF, beginColor = black, winColor = black, winColor1 = black, slowColor1 = blue, normalColor1 = orange, fastColor1 = red, slowColor = blue, normalColor = orange, fastColor = red;
+color ballColor = 255, white = 255, black=0, red = #FF0000, orange = #FF7000, blue = #0000FF, beginColor = black, winColor = black, winColor1 = black, slowColor1 = blue, normalColor1 = orange, fastColor1 = red, slowColor = blue, normalColor = orange, fastColor = red, typeColor = black,typeColor1 = black;
 float leftPaddleSpeedX, leftPaddleSpeedY, leftPaddleSpeed1Y, leftPaddleSpeed2Y, leftPaddleSpeed3Y, paddleSpeedWidth, paddleSpeedHeight, rightPaddleSpeedY, rightPaddleSpeedX;
 float rulesX, rulesY, rulesWidth, rulesHeight;
 float beginX, beginY, beginWidth, beginHeight;
 float button1X, button2X, buttonY, buttonWidth, buttonHeight;
-boolean rules = true, leftPaddle = false, rightPaddle = false, win = false, player1Win = false, player2Win = false;
+boolean rules = true, leftPaddle = false, rightPaddle = false, win = false, player1Win = false, player2Win = false,playType = false;
 int widthRatio = displayWidth;
 int heightRatio = displayHeight;
+float typeX,type1Y,typeY,typeWidth,typeHeight;
 
 ;
 
@@ -42,7 +43,7 @@ void draw() {
 
   if (width>height) {
     if (win == false) {
-      if (rules == false && leftPaddle == true && rightPaddle == true) {
+      if (rules == false && leftPaddle == true && rightPaddle == true && playType == true) {
         gameStart();
       } else startPage();
       ;
@@ -62,6 +63,13 @@ void keyPressed() {
   rightPaddleKeyPressed();
 }
 void mousePressed() {
+  if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= typeY && mouseY <= typeY+typeHeight){
+   rightPaddleAI = true;
+   playType = true;
+  }else if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= type1Y && mouseY <= type1Y+typeHeight){
+  rightPaddleAI = false;
+  playType = true;
+  };
   if (mouseX > beginX && mouseX < beginX+beginWidth &&  mouseY > beginY && mouseY < beginY+beginHeight) {
     rules = false;
   }
@@ -90,6 +98,8 @@ void mousePressed() {
       rightPaddle = true;
     };
   };
+  
+  
  if(win == true){
   if (mouseX >= button1X && mouseX <= button1X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
   

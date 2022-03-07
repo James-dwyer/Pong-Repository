@@ -10,6 +10,8 @@ void startPage() {
   rect(rightPaddleSpeedX, leftPaddleSpeed2Y, paddleSpeedWidth, paddleSpeedHeight);
   rect(rightPaddleSpeedX, leftPaddleSpeed3Y, paddleSpeedWidth, paddleSpeedHeight);
   rect(beginX, beginY, beginWidth, beginHeight);
+  rect(typeX,typeY,typeWidth,typeHeight);
+  rect(typeX,type1Y,typeWidth,typeHeight);
 
   fill(black);
   text(winRules, rulesX, rulesY, rulesWidth, rulesHeight);
@@ -30,7 +32,10 @@ void startPage() {
   text(leftPaddleRules3, rightPaddleSpeedX, leftPaddleSpeed3Y, paddleSpeedWidth, paddleSpeedHeight);
   fill(black);
 
-
+  fill(typeColor);
+  text(typeText,typeX,typeY,typeWidth,typeHeight);
+  fill(typeColor1);
+  text(typeText1,typeX,type1Y,typeWidth,typeHeight);
 
   fill(beginColor);
   text(beginRules, beginX, beginY, beginWidth, beginHeight);
@@ -59,4 +64,11 @@ void startPage() {
   if (mouseX >= rightPaddleSpeedX && mouseX <= rightPaddleSpeedX+paddleSpeedWidth && mouseY >= leftPaddleSpeed3Y && mouseY <= leftPaddleSpeed3Y+paddleSpeedHeight) {
     fastColor1 = #FF5050;
   } else fastColor1 = red;
+  
+  if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= typeY && mouseY <= typeY+typeHeight){
+     typeColor = #DDA0DD;
+  }else typeColor = black;
+  if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= type1Y && mouseY <= type1Y+typeHeight){
+     typeColor1 = #DDA0DD;
+  }else typeColor1 = black;
 };
