@@ -3,12 +3,11 @@ void gameStart() {
   
   ballY += ballYSpeed;
   ballX -= ballXSpeed;
+  
   line(leftNetX, netY, leftNetX, netY2);
   line(rightNetX, netY, rightNetX, netY2);
   line(lineX, lineY, lineX, lineY2);
-  fill(ballColor);
-  ellipse(ballX, ballY, ballWidth, ballHeight);
-  fill(255);
+  
 
   leftPaddleCreate();
   rightPaddleCreate();
@@ -23,7 +22,8 @@ void gameStart() {
   text(score2, sB2X, sB2Y, sB2Width, sB2Height);
   fill(255);
   
-   fill(ballColor);
+fill(ballColor);
+  
   ellipse(ballX, ballY, ballWidth, ballHeight);
   fill(255);
   ifStatements();

@@ -25,6 +25,8 @@ void population() {
   textFont(paddleFont);
 
   textAlign (CENTER, CENTER);
+  ball1X = width*1/2;
+  ballY = height*1/2;
   ballX = width*1/2;
   ballY= height*1/2;
   ballWidth = width*1/75;

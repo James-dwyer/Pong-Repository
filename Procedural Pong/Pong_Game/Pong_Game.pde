@@ -1,12 +1,11 @@
 float leftPaddleX, leftPaddleY, leftPaddleWidth, leftPaddleHeight, leftPaddleSpeed = 0;
 float rightPaddleX, rightPaddleY, rightPaddleWidth, rightPaddleHeight, rightPaddleSpeed = 0;
-float ballX, ballY, ballWidth, ballHeight;
+float ballX,ball1X,ball1Y, ballY, ballWidth, ballHeight;
 float leftNetX, netY, leftNetX2, netY2, rightNetX;
 float sB1X, sB2X, sB1Y, sB2Y, sB1Width, sB2Width, sB2Height, sB1Height;
 float lineX, lineY, lineY2;
 boolean leftGoalScore, rightGoalScore;
-int ballXSpeed, ballYSpeed;
-PFont scoreFont, rulesFont, paddleFont;
+int ballXSpeed, ballYSpeed; PFont scoreFont, rulesFont, paddleFont;
 String score1 = "0", score2 = "0", winRules, leftPaddleRules, leftPaddleRules1, leftPaddleRules2, leftPaddleRules3, rightPaddleRules, beginRules, winText, leftWin, rightWin, winText1,typeText,typeText1,screenSaverText;
 boolean player1, player2;
 color ballColor = 255, white = 255, black=0, red = #FF0000, orange = #FF7000, blue = #0000FF, beginColor = black, winColor = black, winColor1 = black, slowColor1 = blue, normalColor1 = orange, fastColor1 = red, slowColor = blue, normalColor = orange, fastColor = red, typeColor = black,typeColor1 = black,ssColor = black;
@@ -17,6 +16,7 @@ float button1X, button2X, buttonY, buttonWidth, buttonHeight;
 boolean rules = true, leftPaddle = false, rightPaddle = false, win = false, player1Win = false, player2Win = false,playType = false;
 int widthRatio = displayWidth;
 int heightRatio = displayHeight;
+int number;
 float typeX,type1Y,typeY,typeWidth,typeHeight,screenSaverY;
 
 
@@ -112,7 +112,7 @@ void mousePressed() {
  if(win == true){
   if (mouseX >= button1X && mouseX <= button1X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
   
-  rightPaddleSpeed = 0;
+    rightPaddleSpeed = 0;
   leftPaddleSpeed = 0;
   leftPaddle = false;
   rightPaddle = false;
@@ -127,7 +127,9 @@ void mousePressed() {
   leftPaddleUp = false;
   rightPaddleUp = false;
   rightPaddleDown = false;
+  rightPaddleAI = false;
   win=false;
+ 
   };
    if (mouseX >= button2X && mouseX <= button2X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
    exit();
