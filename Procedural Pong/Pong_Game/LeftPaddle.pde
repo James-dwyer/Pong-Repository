@@ -7,7 +7,7 @@ void leftPaddleKeyPressed() {
     leftPaddleDown = false;
     leftPaddleAI = false;
   }
-  if (key == 's' || key == 's') {
+  if (key == 's' || key == 'S') {
     leftPaddleUp = false;
     leftPaddleDown = true;
     leftPaddleAI = false;

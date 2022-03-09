@@ -29,8 +29,7 @@ void setup() {
   widthRatio = width;
   heightRatio = height;
 
-println(widthRatio);
-println(heightRatio);
+
 
   population();
 
