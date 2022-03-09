@@ -25,9 +25,12 @@ float typeX,type1Y,typeY,typeWidth,typeHeight,screenSaverY;
 
 void setup() {
   fullScreen();
+  //size(1200,800);
   widthRatio = width;
   heightRatio = height;
 
+println(widthRatio);
+println(heightRatio);
 
   population();
 

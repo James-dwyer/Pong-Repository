@@ -16,7 +16,9 @@ void population() {
   screenSaverText = "Screen Saver!";
   textFont(rulesFont);
 
-  paddleFont = createFont("arial", 30);
+  if(widthRatio >= 1200){
+    paddleFont = createFont("arial",25);
+  }else paddleFont = createFont("arial",15);
   leftPaddleRules = "LEFT PADDLE: W and S";
   leftPaddleRules1 = "Click Here for Slow Paddle";
   leftPaddleRules2 = "Click Here for Regular Paddle";
