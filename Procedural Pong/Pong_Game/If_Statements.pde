@@ -71,7 +71,9 @@ void ifStatements() {
     if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
       ballXSpeed = ballXSpeed *=-1;
       ballXSpeed = -25;
-      ballYSpeed = int(random(-9, 9));
+      if(ballY-ballHeight/2 <= height*0){
+        ballYSpeed = int(random(9));
+      }else ballYSpeed = int(random(-9, 9));
       while (ballYSpeed == 0) {
         ballYSpeed = int(random(-9, 9));
         

@@ -64,7 +64,15 @@ void keyPressed() {
   rightPaddleKeyPressed();
 }
 void mousePressed() {
-  
+  if(rules == true){
+    if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
+    leftPaddleAI = true;
+    rightPaddleAI = true;
+    rightPaddle = true;
+    leftPaddle = true;
+    rules = false;
+    playType = true;
+  };
   if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= typeY && mouseY <= typeY+typeHeight){
    rightPaddleAI = true;
    playType = true;
@@ -102,13 +110,7 @@ void mousePressed() {
     };
   };
   
-  if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
-    leftPaddleAI = true;
-    rightPaddleAI = true;
-    rightPaddle = true;
-    leftPaddle = true;
-    rules = false;
-    playType = true;
+
   };
  if(win == true){
   if (mouseX >= button1X && mouseX <= button1X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){

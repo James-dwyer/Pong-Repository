@@ -1,4 +1,5 @@
 void startPage() {
+//remake using a call function
   background(225);
   rect(rulesX, rulesY, rulesWidth, rulesHeight);
   rect(leftPaddleSpeedX, leftPaddleSpeedY, paddleSpeedWidth, paddleSpeedHeight);
