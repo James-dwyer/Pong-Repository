@@ -64,6 +64,7 @@ void keyPressed() {
   rightPaddleKeyPressed();
 }
 void mousePressed() {
+  
   if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= typeY && mouseY <= typeY+typeHeight){
    rightPaddleAI = true;
    playType = true;
@@ -111,8 +112,11 @@ void mousePressed() {
   };
  if(win == true){
   if (mouseX >= button1X && mouseX <= button1X+buttonWidth && mouseY >= buttonY && mouseY <= buttonY+buttonHeight){
-  
-    rightPaddleSpeed = 0;
+  leftPaddleHeight = height*2/10;
+  rightPaddleHeight = height*2/10;
+  ballYSpeed = int(random(-4, 4));
+  ballXSpeed = int(random(-9, 9));
+  rightPaddleSpeed = 0;
   leftPaddleSpeed = 0;
   leftPaddle = false;
   rightPaddle = false;
