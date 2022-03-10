@@ -1,6 +1,6 @@
 void gameStart() {
   background(225);
-  
+
   ballY += ballYSpeed;
   ballX -= ballXSpeed;
   

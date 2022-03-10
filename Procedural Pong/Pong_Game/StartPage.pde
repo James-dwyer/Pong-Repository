@@ -13,7 +13,7 @@ void startPage() {
   rect(beginX, beginY, beginWidth, beginHeight);
   rect(typeX,typeY,typeWidth,typeHeight);
   rect(typeX,type1Y,typeWidth,typeHeight);
-  rect(typeX,screenSaverY,typeWidth,typeHeight);
+  rect(screenSaverX,screenSaverY,typeWidth,typeHeight);
 
   fill(black);
   text(winRules, rulesX, rulesY, rulesWidth, rulesHeight);
@@ -44,7 +44,7 @@ void startPage() {
   fill(white);
 
   fill(ssColor);
-  text(screenSaverText,typeX,screenSaverY,typeWidth,typeHeight);
+  text(screenSaverText,screenSaverX,screenSaverY,typeWidth,typeHeight);
   fill(white);
 
 
@@ -77,7 +77,7 @@ void startPage() {
   if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= type1Y && mouseY <= type1Y+typeHeight){
      typeColor1 = #DDA0DD;
   }else typeColor1 = black;
-  if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
+  if(mouseX >= screenSaverX && mouseX <= screenSaverX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
      ssColor = #DDA0DD;
   }else ssColor = black;
   

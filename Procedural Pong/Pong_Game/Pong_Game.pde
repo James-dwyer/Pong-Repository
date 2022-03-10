@@ -17,7 +17,7 @@ boolean rules = true, leftPaddle = false, rightPaddle = false, win = false, play
 int widthRatio = displayWidth;
 int heightRatio = displayHeight;
 int number;
-float typeX,type1Y,typeY,typeWidth,typeHeight,screenSaverY;
+float typeX,type1Y,typeY,typeWidth,typeHeight,screenSaverY,screenSaverX;
 
 
 ;
@@ -67,7 +67,7 @@ void keyPressed() {
 }
 void mousePressed() {
   if(rules == true){
-    if(mouseX >= typeX && mouseX <= typeX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
+    if(mouseX >= screenSaverX && mouseX <= screenSaverX+typeWidth && mouseY >= screenSaverY && mouseY <= screenSaverY+typeHeight){
     leftPaddleAI = true;
     rightPaddleAI = true;
     rightPaddle = true;

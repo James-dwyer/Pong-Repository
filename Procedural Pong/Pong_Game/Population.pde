@@ -104,5 +104,6 @@ void population() {
   buttonY = height*5/7;
   button2X = width-button1X-buttonWidth;
   
-  screenSaverY = height*8/9;
+  screenSaverY = height-typeHeight;
+  screenSaverX = width-typeWidth;
 }
