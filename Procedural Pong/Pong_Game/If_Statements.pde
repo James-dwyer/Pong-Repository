@@ -1,5 +1,5 @@
 void ifStatements() {
-
+  score1 = str(counter1);
 
   if (ballY-ballHeight/2 <= height*0 || ballY+ballHeight/2 >= height) {
     ballYSpeed = ballYSpeed*-1;
@@ -47,6 +47,51 @@ void ifStatements() {
     ballXSpeed = ballXSpeed += 1;
  
   };
+
+  if (ballXSpeed >= 25 || ballXSpeed <= -25) { 
+    if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
+      ballXSpeed = ballXSpeed *=-1;
+      ballXSpeed = -25;
+      number += 1;
+      counter1 += 1;
+      
+      if(number >= 16){
+      ballYSpeed = int(random(-16,16));
+      }else ballYSpeed = int(random(-9,9));
+      if(counter1 >= 25){
+           ballColor = 225;
+        }
+        
+      
+      if(ballY-ballHeight/2 <= height*0){
+        ballYSpeed = int(random(9));
+      }else ballYSpeed = int(random(-9, 9));
+      while (ballYSpeed == 0) {
+        ballYSpeed = int(random(-9, 9));
+        
+      };
+      if (ballY+ballHeight >= height)ballYSpeed *= -1; 
+      if(ballY-ballHeight <= height*0)ballYSpeed *= -1;
+    };
+    if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
+      ballXSpeed = ballXSpeed *=-1;
+      ballXSpeed = 25;
+      ballYSpeed = int(random(-9, 9));
+      number += 1;
+       counter1 += 1;
+      if(number >= 16){
+      ballYSpeed = int(random(-16,16));
+      }else ballYSpeed = int(random(-9,9));
+      while (ballYSpeed == 0) {
+        ballYSpeed = int(random(-9, 9));
+       
+      };
+      if (ballY-ballHeight == height*0)ballYSpeed *= -1; 
+      ;
+    };
+  }
+
+
   
   if(ballXSpeed > 18 && ballXSpeed < 25){
   ballColor = #00FFFF;
@@ -67,44 +112,6 @@ void ifStatements() {
   if (ballXSpeed > -10 && ballXSpeed <0){
     ballColor = white;
   };
-  if (ballXSpeed >= 25 || ballXSpeed <= -25) { 
-    if (ballX-ballWidth/2 <= leftPaddleX+leftPaddleWidth+leftPaddleWidth*2 && ballY <= leftPaddleY+leftPaddleHeight && ballY >= leftPaddleY) {
-      ballXSpeed = ballXSpeed *=-1;
-      ballXSpeed = -25;
-      number += 1;
-  
-      if(number >= 16){
-      ballYSpeed = int(random(-16,16));
-      }else ballYSpeed = int(random(-9,9));
-      if(ballY-ballHeight/2 <= height*0){
-        ballYSpeed = int(random(9));
-      }else ballYSpeed = int(random(-9, 9));
-      while (ballYSpeed == 0) {
-        ballYSpeed = int(random(-9, 9));
-        
-      };
-      if (ballY+ballHeight >= height)ballYSpeed *= -1; 
-      if(ballY-ballHeight <= height*0)ballYSpeed *= -1;
-    };
-    if (ballX+ballWidth/2 >= rightPaddleX+rightPaddleWidth+rightPaddleWidth*2 && ballY <= rightPaddleY+rightPaddleHeight && ballY >= rightPaddleY) {
-      ballXSpeed = ballXSpeed *=-1;
-      ballXSpeed = 25;
-      ballYSpeed = int(random(-9, 9));
-      number += 1;
-      if(number >= 16){
-      ballYSpeed = int(random(-16,16));
-      }else ballYSpeed = int(random(-9,9));
-      while (ballYSpeed == 0) {
-        ballYSpeed = int(random(-9, 9));
-       
-      };
-      if (ballY-ballHeight == height*0)ballYSpeed *= -1; 
-      ;
-    };
-  }
-
-
-
 
   if (rightPaddleUp == true) rightPaddleY += rightPaddleSpeed;
   if (rightPaddleDown == true) rightPaddleY -= rightPaddleSpeed;

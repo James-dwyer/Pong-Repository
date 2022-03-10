@@ -16,7 +16,7 @@ float button1X, button2X, buttonY, buttonWidth, buttonHeight;
 boolean rules = true, leftPaddle = false, rightPaddle = false, win = false, player1Win = false, player2Win = false,playType = false;
 int widthRatio = displayWidth;
 int heightRatio = displayHeight;
-int number;
+int number,counter1 = 0;
 float typeX,type1Y,typeY,typeWidth,typeHeight,screenSaverY,screenSaverX;
 
 
@@ -34,7 +34,8 @@ void setup() {
   population();
 
   ballYSpeed = int(random(-4, 4));
-  ballXSpeed = int(random(-9, 9));
+  //ballXSpeed = int(random(-9, 9));
+  ballXSpeed = 20;
 
   while (ballYSpeed == 0) ballYSpeed = int(random(-4, 4));
   while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
