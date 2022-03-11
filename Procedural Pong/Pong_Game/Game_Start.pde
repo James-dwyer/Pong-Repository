@@ -26,5 +26,7 @@ fill(ballColor);
   
   ellipse(ballX, ballY, ballWidth, ballHeight);
   fill(255);
+   while (ballYSpeed == 0) ballYSpeed = int(random(-4, 4));
+  while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
   ifStatements();
 }

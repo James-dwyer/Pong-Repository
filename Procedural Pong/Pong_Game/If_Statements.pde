@@ -1,5 +1,5 @@
 void ifStatements() {
-  score1 = str(counter1);
+  
 
   if (ballY-ballHeight/2 <= height*0 || ballY+ballHeight/2 >= height) {
     ballYSpeed = ballYSpeed*-1;
@@ -86,6 +86,9 @@ void ifStatements() {
         ballYSpeed = int(random(-9, 9));
        
       };
+      if(counter1 >= 25){
+           ballColor = 225;
+        }
       if (ballY-ballHeight == height*0)ballYSpeed *= -1; 
       ;
     };
@@ -130,7 +133,8 @@ void ifStatements() {
     while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
     leftGoalScore = false;
     leftPaddleHeight = height*2/12;
-
+  number = 0;
+    counter1 = 0;
   };
   if (leftGoalScore == true && score1 == "1") {
     score1 = "2";
@@ -142,6 +146,8 @@ void ifStatements() {
     while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
     leftGoalScore = false;
     leftPaddleHeight = height*2/15;
+    number = 0;
+    counter1 = 0;
     
   };
   if (leftGoalScore == true && score1 == "2") {
@@ -150,6 +156,8 @@ void ifStatements() {
     win = true;
     player2Win = true;
     rules = true;leftPaddle = false;rightPaddle = false;
+    number = 0;
+    counter1 = 0;
  
   };
 
@@ -163,6 +171,8 @@ void ifStatements() {
     while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
     rightGoalScore = false;
     rightPaddleHeight = height*2/12;
+    number = 0;
+    counter1 = 0;
  
   };
   if (rightGoalScore == true && score2 == "1") {
@@ -175,13 +185,16 @@ void ifStatements() {
     while (ballXSpeed == 0) ballXSpeed = int(random(-9, 9));
     rightGoalScore = false;
     rightPaddleHeight = height*2/15;
-
+  number = 0;
+    counter1 = 0;
   };
   if (rightGoalScore == true && score2 == "2") {
     score2 = "3";
     rightGoalScore = false;
     win = true;
     player1Win = true;
+    number = 0;
+    counter1 = 0;
 
     //rules = true;leftPaddle = false;rightPaddle = false;
   };

@@ -44,7 +44,7 @@ void setup() {
 
 
 void draw() {
-
+ 
   if (width>height) {
     if (win == false) {
       if (rules == false && leftPaddle == true && rightPaddle == true && playType == true) {
@@ -126,6 +126,8 @@ void mousePressed() {
   leftPaddle = false;
   rightPaddle = false;
   rules=true;
+  number = 0;
+  counter1 = 0;
   score1 = "0";
   score2 = "0";
   ballX = width/2;
