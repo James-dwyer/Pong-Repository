@@ -1,6 +1,6 @@
 float leftPaddleX, leftPaddleY, leftPaddleWidth, leftPaddleHeight, leftPaddleSpeed = 0;
 float rightPaddleX, rightPaddleY, rightPaddleWidth, rightPaddleHeight, rightPaddleSpeed = 0;
-float ballX,ball1X,ball1Y, ballY, ballWidth, ballHeight;
+float ballX, ballY, ballWidth, ballHeight;
 float leftNetX, netY, leftNetX2, netY2, rightNetX;
 float sB1X, sB2X, sB1Y, sB2Y, sB1Width, sB2Width, sB2Height, sB1Height;
 float lineX, lineY, lineY2;
