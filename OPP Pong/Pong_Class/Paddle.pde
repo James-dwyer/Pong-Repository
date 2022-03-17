@@ -19,6 +19,7 @@ class Paddle {
   void draw() {
     fill(pColor);
     paddle();
+    
   };
 
   void paddle() {
