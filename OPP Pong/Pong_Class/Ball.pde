@@ -7,7 +7,7 @@ class ball{
      ballX = int(Width/2);
      ballY = int(Height/2);
      ballDiameter = int(Width/75);
-     ballColor = color(#FF00FF);
+     ballColor = color((int(random(0,255))),int(random(0,255)),int(random(0,255)));
      while(ballXSpeed == 0)ballXSpeed = int(random(-5,5));
      while(ballYSpeed == 0)ballYSpeed = int(random(-5,5));
      };
@@ -31,7 +31,7 @@ class ball{
     ballYSpeed = ballYSpeed*-1;
   }
   if(ballX+ballDiameter/2 >= width || ballX-ballDiameter/2  <= width*0) ballXSpeed *= -1;   
-   if(ballX+ballDiameter/2 >= paddle2.paddleX-paddle2.paddleWidth && ballY >= paddle2.paddleY && ballY <= paddle2.paddleY-paddle2.paddleHeight){
+   if(ballX+ballDiameter/2 >= paddle.paddleLX-paddle.paddleLWidth && ballY >= paddle.paddleLY && ballY <= paddle.paddleLY-paddle.paddleLHeight){
      ballXSpeed *= -1;
    };
   };
