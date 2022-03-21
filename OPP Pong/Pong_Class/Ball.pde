@@ -40,11 +40,11 @@ class ball{
     if(ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleLHeight/2 && ballY <= paddle.paddleRY+paddle.paddleLHeight/2){
    ballXSpeed *= -1;
    };
-   if(ballX-ballDiameter/2 < leftLine.lineX){
+   if(ballX-ballDiameter/2 < leftGoal.lineX){
     ballX = width*0;
     ballYSpeed = 0;
     }
-    if(ballX+ballDiameter/2 > rightLine.lineX){
+    if(ballX+ballDiameter/2 > rightGoal.lineX){
     ballX = width;
     ballYSpeed = 0;
     }

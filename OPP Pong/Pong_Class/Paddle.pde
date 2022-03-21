@@ -5,18 +5,7 @@ class Paddle {
   color pColor,pColor1;
   float lPaddleSpeed,rPaddleSpeed;
   
-  boolean leftPaddleUp = false, leftPaddleDown = false;
-  boolean rightPaddleUp = false, rightPaddleDown = false;
 
-
-  //Paddle(float x, float y, float Width, float Height, color colour, float speed) { 
-  //  paddleX = x;
-  //  paddleY = y;
-  //  paddleWidth = Width;
-  //  paddleHeight = Height;
-  //  pColor = colour;
-  //  paddleSpeed = speed;
-  //};
    Paddle(float Width, float Height){
      
      
