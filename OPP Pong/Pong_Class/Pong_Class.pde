@@ -31,42 +31,42 @@ void draw() {
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      paddle.paddleSpeed = -6;
+      paddle.rPaddleSpeed = -6;
     };
     if (keyCode == DOWN) {
-      paddle.paddleSpeed = 6;
+      paddle.rPaddleSpeed = 6;
     };
   };
   if (key == 'w' || key == 'W') {
-    paddle.paddleSpeed = -6;
+    paddle.lPaddleSpeed = -6;
   };
   if (key == 's' || key == 'S') {
-    paddle.paddleSpeed = 6;
+    paddle.lPaddleSpeed = 6;
   };
 };
 
 void keyReleased() {
   if (key == CODED) {
     if (keyCode == UP) {
-      paddle.paddleSpeed = 0;
+      paddle.rPaddleSpeed = 0;
     };
     if (keyCode == DOWN) {
-      paddle.paddleSpeed = 0;
+      paddle.rPaddleSpeed = 0;
     };
   };
     if (key == 'w' || key == 'W') {
-      paddle.paddleSpeed = 0;
+      paddle.lPaddleSpeed = 0;
     };
     if (key == 's' || key == 'S') {
-      paddle.paddleSpeed = 0;
+      paddle.lPaddleSpeed = 0;
     };
   };
 
   void mousePressed() {
-    if (counter <= 10) {
+    if (counter < 10) {
       counter+= 1;
       for (int i = counter-1; i < counter; i++) {
         Ball[i] = new ball(displayWidth, displayHeight);
-      }
-    }
+      } 
+    }else counter = 1;
   };

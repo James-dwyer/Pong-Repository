@@ -1,9 +1,10 @@
 class Paddle {
-  float paddleLX, paddleLY, PaddleRY, paddleLWidth, paddleLHeight;
+  float paddleLX, paddleLY, paddleRY, paddleLWidth, paddleLHeight,paddleRX;
  
   float leftPaddleY;
   color pColor;
-  float paddleSpeed;
+  float lPaddleSpeed,rPaddleSpeed;
+  
   boolean leftPaddleUp = false, leftPaddleDown = false;
   boolean rightPaddleUp = false, rightPaddleDown = false;
 
@@ -20,11 +21,12 @@ class Paddle {
      
      
      paddleLX = Width/50;
-     
      paddleLY = Height/2;
      paddleLWidth = Width/85;
      paddleLHeight = Height/5;
      pColor = #FF0000;
+     paddleRY = Height/2;
+     paddleRX = Width - paddleLX;
      
    
    };
@@ -37,14 +39,18 @@ class Paddle {
 
   void paddle() {
     rect(paddleLX, paddleLY-paddleLHeight/2, paddleLWidth, paddleLHeight);
-
+    rect(paddleRX-paddleLWidth,paddleRY-paddleLHeight/2,paddleLWidth,paddleLHeight);
     move();
   };
 
 
   void move() {
-    paddleLY += paddleSpeed;
-    if(paddleLY <= displayHeight*0)paddleLY = 0;
+    paddleLY += lPaddleSpeed;
+    paddleRY += rPaddleSpeed;
+    if(paddleLY-paddleLHeight/2 <= displayHeight*0)paddleLY = displayHeight*0+paddleLHeight/2;
+    if(paddleLY+paddleLHeight/2 >= displayHeight)paddleLY = displayHeight-paddleLHeight/2;
+    if(paddleRY-paddleLHeight/2 <= displayHeight*0) paddleRY = displayHeight*0+paddleLHeight/2;
+    if(paddleRY+paddleLHeight/2 >= displayHeight)paddleRY = displayHeight-paddleLHeight/2;
     //else if(paddleLY+paddleLHeight > height){
     //  paddleLY = height - paddleLHeight;
     //};
