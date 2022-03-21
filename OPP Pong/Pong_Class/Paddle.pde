@@ -2,7 +2,7 @@ class Paddle {
   float paddleLX, paddleLY, paddleRY, paddleLWidth, paddleLHeight,paddleRX;
  
   float leftPaddleY;
-  color pColor;
+  color pColor,pColor1;
   float lPaddleSpeed,rPaddleSpeed;
   
   boolean leftPaddleUp = false, leftPaddleDown = false;
@@ -25,6 +25,7 @@ class Paddle {
      paddleLWidth = Width/85;
      paddleLHeight = Height/5;
      pColor = #FF0000;
+     pColor1 = #0000FF;
      paddleRY = Height/2;
      paddleRX = Width - paddleLX;
      
@@ -32,13 +33,15 @@ class Paddle {
    };
 
   void draw() {
-    fill(pColor);
+    
     paddle();
     
   };
 
   void paddle() {
+    fill(pColor);
     rect(paddleLX, paddleLY-paddleLHeight/2, paddleLWidth, paddleLHeight);
+    fill(pColor1);
     rect(paddleRX-paddleLWidth,paddleRY-paddleLHeight/2,paddleLWidth,paddleLHeight);
     move();
   };

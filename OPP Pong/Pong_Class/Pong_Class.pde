@@ -1,18 +1,19 @@
 //ball ball1, ball2;
 ball[] Ball = new ball[10];
 int counter = Ball.length - Ball.length; 
-
-//Paddle paddle2, paddle1;
+line leftLine, midLine, rightLine;
 Paddle paddle;
 
 void setup() {
   fullScreen();
 
   Ball[counter] = new ball(displayWidth, displayHeight);
-  //paddle1 = new Paddle(width*1/50, height*1/2, width*1/85, height*2/10, #FF0000, 0);
-  //paddle2 = new Paddle(width-width*1/50, height*1/2, width*1/85-width*1/85*2, height*2/10, #FF00FF, 0);
+  leftLine = new line(width/50,height*0,width/50,height);
+  midLine = new line(width/2,height*0,width/2,height);
+  
   paddle = new Paddle(displayWidth,displayHeight);
-  //ball1 = new ball( width*1/2, height*1/2, width*1/75, width*1/75, #FF00FF, 6, 6);
+  rightLine = new line(paddle.paddleRX,height*0,paddle.paddleRX,height);
+
   counter += 1;
 };
 
@@ -23,6 +24,9 @@ void draw() {
   }
 
   paddle.draw();
+  leftLine.draw();
+  midLine.draw();
+  rightLine.draw();
   //paddle2.draw();
   //collision();
 };
