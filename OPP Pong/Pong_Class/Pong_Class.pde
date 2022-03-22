@@ -3,11 +3,15 @@ ball[] Ball = new ball[10];
 int counter = Ball.length - Ball.length; 
 line leftGoal, midLine, rightGoal;
 Paddle paddle;
+Scoreboard left,right;
 
 void setup() {
   fullScreen();
 
+  
   Ball[counter] = new ball(displayWidth, displayHeight);
+  left = new Scoreboard(width*1/4,height*0,width/10,height/8,0);
+  right = new Scoreboard(width*3/4,height*0,width/10,height/8,0);
   leftGoal = new line(width/50,height*0,width/50,height);
   midLine = new line(width/2,height*0,width/2,height);
   
@@ -15,6 +19,7 @@ void setup() {
   rightGoal = new line(paddle.paddleRX,height*0,paddle.paddleRX,height);
 
   counter += 1;
+  
 };
 
 void draw() {
@@ -22,13 +27,13 @@ void draw() {
   for ( int i = 0; i < counter; i++) {
     Ball[i].draw();
   }
-
+  
   paddle.draw();
   leftGoal.draw();
   midLine.draw();
   rightGoal.draw();
-  //paddle2.draw();
-  //collision();
+  left.draw();
+  right.draw();
 };
 
 

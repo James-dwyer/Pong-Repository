@@ -19,6 +19,7 @@ class ball{
      
      move();
      bounce();
+     score();
    };
    
    void move(){
@@ -40,15 +41,28 @@ class ball{
     if(ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleLHeight/2 && ballY <= paddle.paddleRY+paddle.paddleLHeight/2){
    ballXSpeed *= -1;
    };
-   if(ballX-ballDiameter/2 < leftGoal.lineX){
-    ballX = width*0;
-    ballYSpeed = 0;
+   
+  };
+     void score(){
+    if(ballX-ballDiameter/2 < leftGoal.lineX){
+      left.score = int(left.score += 1);
+    };
+     if(ballX+ballDiameter/2 > rightGoal.lineX){
+     right.score = int(right.score += 1);
+     };
+    if(ballX-ballDiameter/2 < leftGoal.lineX){
+    counter = 1;
+    ballX = width/2;
+    ballYSpeed = int(random(-6,6));
+    
     }
     if(ballX+ballDiameter/2 > rightGoal.lineX){
-    ballX = width;
-    ballYSpeed = 0;
+      counter = 1;
+    ballX = width/2;
+    ballYSpeed = int(random(-6,6));
+    
     }
   };
-    
+  
  
 };
