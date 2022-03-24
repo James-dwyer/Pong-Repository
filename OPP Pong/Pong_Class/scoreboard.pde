@@ -1,29 +1,25 @@
-class Scoreboard{
-  float sbX,sbY,sbWidth,sbHeight;
+class Scoreboard {
+  float sbX, sbY, sbWidth, sbHeight;
   int score, score2;
   PFont scoreFont;
-  Scoreboard(float X, float Y, float Width, float Height, int Score){
-    
+  Scoreboard(float X, float Y, float Width, float Height, int Score) {
+
     sbY = Y;
     sbWidth = Width;
     sbHeight = Height;
     sbX = X-sbWidth/2;
-     scoreFont = createFont("arial",60);
-    
+    scoreFont = createFont("arial", 60);
+
     textFont(scoreFont);
-    
-    textAlign (CENTER,CENTER);
+
+    textAlign (CENTER, CENTER);
     score = Score;
     //score2 = "0";
-    
   };
-  
-  void draw(){
-    
-  fill(0);
-  text(str(score),sbX,sbY,sbWidth,sbHeight);
+
+  void draw() {
+
+    fill(0);
+    text(str(score), sbX, sbY, sbWidth, sbHeight);
   };
-  
- 
-  
 };
