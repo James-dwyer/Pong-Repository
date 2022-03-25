@@ -39,7 +39,7 @@ class ball {
       ballXSpeed *= -1;
       ballXSpeed += 1;
     };
-    if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleLHeight/2 && ballY <= paddle.paddleRY+paddle.paddleLHeight/2) {
+    if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
       ballXSpeed *= -1;
       ballXSpeed -= 1;
     };
@@ -66,13 +66,19 @@ class ball {
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
      Ball[0].ballXSpeed = int(random(-7, 7));
-      while (ballXSpeed == 0)ballXSpeed = int(random(-7, 7));
-      while (ballYSpeed == 0)ballYSpeed = int(random(-6, 6));
+      while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
+      while (Ball[0].ballYSpeed == 0)Ball[0].ballYSpeed = int(random(-6, 6));
     }
-    if (left.score == 3 || right.score == 3) {
+    if (left.score == 3) {
+      leftWin = true;
       left.score = (int(left.score = 0));
       right.score =int(right.score = 0);
-      Win = true;
-    };
+      
+      };
+      if(right.score == 3){
+       rightWin = true;
+      left.score = (int(left.score = 0));
+      right.score = int(right.score = 0);
+      };
   };
 };

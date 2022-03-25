@@ -1,5 +1,6 @@
 //ball ball1, ball2;
 boolean Win = false;
+boolean leftWin = false, rightWin = false;
 ball[] Ball = new ball[10];
 int counter = Ball.length - Ball.length; 
 line leftGoal, midLine, rightGoal;
@@ -14,9 +15,9 @@ void setup() {
   Ball[counter] = new ball(displayWidth, displayHeight);
   left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   right = new Scoreboard(width*3/4, height*0, width/10, height/8, 0);
-  
+
+  win = new Rectangle(width/2, height/4, width/4, height/25, "Left Player Wins");  
   midLine = new line(width/2, height*0, width/2, height);
-  win = new Rectangle(displayWidth,displayHeight);
   paddle = new Paddle(displayWidth, displayHeight);
   rightGoal = new line(paddle.paddleRX, height*0, paddle.paddleRX, height);
   leftGoal = new line(paddle.paddleLX, height*0, paddle.paddleLX, height);
@@ -26,21 +27,21 @@ void setup() {
 
 void draw() {
   background(225);
+
   if (width > height) {
-   if(Win == false){
-    for ( int i = 0; i < counter; i++) {
-      Ball[i].draw();
-    }
-    
-    paddle.draw();
-    leftGoal.draw();
-    midLine.draw();
-    rightGoal.draw();
-    left.draw();
-    right.draw();
-   }else {
-   win.draw();
-   };
+    if (leftWin == false && rightWin == false) {
+      for ( int i = 0; i < counter; i++) {
+        Ball[i].draw();
+      }
+      win.draw();
+      paddle.draw();
+      leftGoal.draw();
+      midLine.draw();
+      rightGoal.draw();
+      left.draw();
+      right.draw();
+    } else {
+    };
   } else {
     noLoop(); 
     println("ERROR: HEIGHT IS GREATER THAN WIDTH");
