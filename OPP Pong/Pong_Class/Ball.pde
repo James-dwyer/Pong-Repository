@@ -47,9 +47,17 @@ class ball {
   void score() {
     if (ballX-ballDiameter/2 < leftGoal.lineX) {
       right.score = int(right.score += 1);
+      //paddle.paddleLY = height/2+paddle.paddleLHeight/2;
+      //paddle.paddleRY = height/2+paddle.paddleRHeight/2;
+      paddle.paddleLY = height/2;
+      paddle.paddleRY = height/2;
     };
     if (ballX+ballDiameter/2 > rightGoal.lineX) {
       left.score = int(left.score += 1);
+       //paddle.paddleLY = displayHeight*0+paddle.paddleLHeight/2;
+      //paddle.paddleRY = displayHeight*0+paddle.paddleRHeight/2;
+      paddle.paddleLY = height/2;
+      paddle.paddleRY = height/2;
     };
     if (ballX-ballDiameter/2 < leftGoal.lineX) {
       //counter = 1;

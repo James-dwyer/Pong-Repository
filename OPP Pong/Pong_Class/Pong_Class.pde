@@ -6,7 +6,7 @@ int counter = Ball.length - Ball.length;
 line leftGoal, midLine, rightGoal;
 Paddle paddle;
 Scoreboard left, right;
-Rectangle win;
+Rectangle lWin,rWin;
 
 void setup() {
   fullScreen();
@@ -16,7 +16,8 @@ void setup() {
   left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   right = new Scoreboard(width*3/4, height*0, width/10, height/8, 0);
 
-  win = new Rectangle(width/2, height/4, width/4, height/25, "Left Player Wins");  
+  lWin = new Rectangle(width*1/2, height/4, width/3, height/10,"Left Player Wins");  
+  rWin = new Rectangle(width*1/2, height/4, width/3,height/10,"Right Player Wins");
   midLine = new line(width/2, height*0, width/2, height);
   paddle = new Paddle(displayWidth, displayHeight);
   rightGoal = new line(paddle.paddleRX, height*0, paddle.paddleRX, height);
@@ -33,14 +34,22 @@ void draw() {
       for ( int i = 0; i < counter; i++) {
         Ball[i].draw();
       }
-      win.draw();
+      
       paddle.draw();
       leftGoal.draw();
       midLine.draw();
       rightGoal.draw();
       left.draw();
       right.draw();
+      
     } else {
+      if(leftWin == true && rightWin == false){
+        lWin.draw();
+    }
+    else if(rightWin == true && leftWin == false){
+    rWin.draw();
+    };
+      
     };
   } else {
     noLoop(); 
@@ -83,10 +92,21 @@ void keyReleased() {
 };
 
 void mousePressed() {
+  if(leftWin == false && rightWin == false){
   if (counter < 10) {
     counter+= 1;
     for (int i = counter-1; i < counter; i++) {
       Ball[i] = new ball(displayWidth, displayHeight);
     }
   } else counter = 1;
+  };
+  if(leftWin == true || rightWin == true){
+  if(mouseX >= width/4 && mouseX <= (width/4)+(width/5) && mouseY >= height/2 && mouseY <= height/2+height/15){
+  leftWin = false;
+  rightWin = false;
+  };
+  if(mouseX >= (width*3/4-width/5) && mouseX <= (width*3/4-width/5)+(width/5) && mouseY >= height/2 && mouseY <= height/2+height/15){
+  exit();
+  };
+  };
 };
