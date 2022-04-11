@@ -11,6 +11,12 @@ class ball {
     while (ballXSpeed == 0)ballXSpeed = int(random(-5, 5));
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
   };
+  ball(float Width, float Height, float Diameter){
+  ballX = int(Width);
+  ballY = int(Height);
+  ballDiameter = int(Diameter);
+  
+  };
 
   void draw() {
     fill(ballColor);
@@ -20,6 +26,17 @@ class ball {
     move();
     bounce();
     score();
+    ballBounce();
+  };
+  
+  void starDraw(){
+    
+  fill(15);
+    ellipse(ballX, ballY, ballDiameter, ballDiameter);
+    fill(0);
+    
+    ballBounce();
+  
   };
 
   void move() {
@@ -88,5 +105,15 @@ class ball {
       left.score = (int(left.score = 0));
       right.score = int(right.score = 0);
       };
+  };
+  
+  void ballBounce(){
+//  for(int i = 0; i < Ball.length; i++){
+//  for(int X = Star.length-1; X > i; X--){
+//  if(Ball[i].ballX+Ball[i].ballDiameter/2 >= Star[X].ballX-Star[X].ballDiameter/2 && Ball[i].ballX-Ball[i].ballDiameter/2 <= Star[X].ballX+Star[X].ballDiameter/2){Ball[i].ballX *= -1; Ball[i].ballY *= -1;};
+//  };
+//};
+
+
   };
 };
