@@ -1,5 +1,5 @@
 //ball ball1, ball2;
-int starNum = 5;
+int starNum = 1;
 boolean redo = false;
 int Width,Height;
 int Diameter;

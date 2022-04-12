@@ -3,7 +3,7 @@ void starSetup(){
   while (redo == false) {
     for (int i = 0; i < Star.length; i++) {
       
-      float diameter = random(Diameter/30,Diameter/10);
+      float diameter = random(Diameter/70,Diameter/15);
       float randX = random(leftGoal.lineX+diameter/2, rightGoal.lineX-diameter/2);
       float randY = random(0+diameter/2, Height-diameter/2);
       Star[i] = new ball(randX, randY, diameter);
