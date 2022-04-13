@@ -121,7 +121,7 @@ class ball {
 
 if(dist(Ball[0].ballX,Ball[0].ballY,ball1X,ball1Y) < ball1Diameter/2 + Ball[0].ballDiameter/2){
   Ball[0].ballXSpeed *= -1;
-  //ballY *= -1;
+  Ball[0].ballYSpeed *= -1;
   println("hello");
   
 };
