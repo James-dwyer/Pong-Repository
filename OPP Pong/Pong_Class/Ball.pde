@@ -1,5 +1,5 @@
 class ball {
-  float ballX, ballY,ball1Y, ballDiameter,ball1X;
+  float ballX, ballY,ball1Y, ballDiameter,ball1Diameter,ball1X;
   color ballColor;
   int ballXSpeed, ballYSpeed;
 
@@ -14,7 +14,7 @@ class ball {
   ball(float Width, float Height, float Diameter){
   ball1X = int(Width);
   ball1Y = int(Height);
-  ballDiameter = int(Diameter);
+  ball1Diameter = int(Diameter);
   
   };
 
@@ -32,7 +32,7 @@ class ball {
   void starDraw(){
     
   fill(90);
-    ellipse(ball1X, ball1Y, ballDiameter, ballDiameter);
+    ellipse(ball1X, ball1Y, ball1Diameter, ball1Diameter);
     fill(0);
     ballBounce();
 
@@ -111,15 +111,22 @@ class ball {
   void ballBounce(){
 //  for(int i = 0; i < Ball.length; i++){
 //  for(int X = Star.length-1; X > i; X--){
-//  if(Ball[i].ballX+Ball[i].ballDiameter/2 >= Star[X].ballX-Star[X].ballDiameter/2 && Ball[i].ballX-Ball[i].ballDiameter/2 <= Star[X].ballX+Star[X].ballDiameter/2){Ball[i].ballX *= -1; Ball[i].ballY *= -1;};
+//  if(dist(Ball[i].ballX,Ball[i].ballY,Star[X].ball1X,Star[X].ball1Y) < Star[X].ballDiameter/2 + Ball[i].ballDiameter/2){
+//  ballXSpeed *= -1;
+//  //ballY *= -1;
+//  println("hello");
 //  };
 //};
-  if(Ball[0].ballX+Ball[0].ballDiameter/2 >= Star[0].ball1X-Star[0].ballDiameter/2 || Ball[0].ballX+Ball[0].ballDiameter/2 >= Star[0].ball1X+Star[0].ballDiameter/2){
-  ballXSpeed *= -1;
+//  };
+
+if(dist(Ball[0].ballX,Ball[0].ballY,ball1X,ball1Y) < ball1Diameter/2 + Ball[0].ballDiameter/2){
+  Ball[0].ballXSpeed *= -1;
   //ballY *= -1;
   println("hello");
-  };
-
-
-  };
+  
 };
+};
+  
+
+
+  };
