@@ -36,7 +36,7 @@ class Paddle {
 
 
   void move() {
-    if(startScreen ==  true){ 
+    if (startScreen ==  true) { 
       paddleLY = Ball[0].ballY;
       paddleRY = Ball[0].ballY;
     };
@@ -46,7 +46,7 @@ class Paddle {
     if (paddleLY+paddleLHeight/2 >= displayHeight)paddleLY = displayHeight-paddleLHeight/2;
     if (paddleRY-paddleRHeight/2 <= displayHeight*0) paddleRY = displayHeight*0+paddleRHeight/2;
     if (paddleRY+paddleRHeight/2 >= displayHeight)paddleRY = displayHeight-paddleRHeight/2;
-    
+
     //else if(paddleLY+paddleLHeight > height){
     //  paddleLY = height - paddleLHeight;
     //};

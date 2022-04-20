@@ -9,10 +9,10 @@ class Scoreboard {
     sbWidth = Width;
     sbHeight = Height;
     sbX = X-sbWidth/2;
-    
-    
-    
-    
+
+
+
+
     scoreFont = createFont("arial", 60);
 
     textFont(scoreFont);
@@ -24,8 +24,9 @@ class Scoreboard {
 
   void draw() {
 
-    if(darkMode == false){ fill(black);} else fill(grey);
+    if (darkMode == false) { 
+      fill(black);
+    } else fill(grey);
     text(str(score), sbX, sbY, sbWidth, sbHeight);
- 
   };
 };
