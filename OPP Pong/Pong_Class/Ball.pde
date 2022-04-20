@@ -3,14 +3,15 @@ class ball {
   color ballColor;
   int ballXSpeed, ballYSpeed;
 
-  ball(float Width, float Height) {
+  ball(float Width, float Height,int bSpeed) {
     ballX = int(Width/2);
     ballY = int(Height/2);
     ballDiameter = int(Width/75);
     ballColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 255)));
-    //ballXSpeed = int(ballSpeed);
+    ballXSpeed = bSpeed;
+  //ballSpeed = ballSpeed;
   
-      //while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
+    //while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
  
     
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
@@ -46,7 +47,7 @@ class ball {
   };
 
   void move() {
-    ballX += ballSpeed;
+    ballX += ballXSpeed;
     ballY += ballYSpeed;
   };
 
@@ -58,27 +59,48 @@ class ball {
     //if(ballX+ballDiameter/2 >= paddle.paddleLX-paddle.paddleLWidth && ballY >= paddle.paddleLY && ballY <= paddle.paddleLY-paddle.paddleLHeight){
     //  ballXSpeed *= -1;
     //};
-       if(ballSpeed == 20 || ballSpeed == -20){
+       if(ballXSpeed >= 20 || ballXSpeed <= -20){
       if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
-      ballSpeed *= -1;
-      ballSpeed = 20;
+      ballXSpeed *= -1;
+      ballXSpeed = 20;
       ballYSpeed = int(random(-6, 6));
+      while(ballYSpeed == 0) ballYSpeed = int(random(-6,6));
     };
     if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
-      ballSpeed *= -1;
-      ballSpeed = -20;
+      ballXSpeed *= -1;
+      ballXSpeed = -20;
       ballYSpeed = int(random(-6, 6));
     };
     }
     else{
+      if(slow == true){
     if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
-      ballSpeed *= -1;
-      ballSpeed += 1;
+      ballXSpeed *= -1;
+      ballXSpeed += 1;
     };
     if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
-      ballSpeed *= -1;
-      ballSpeed -= 1;
+      ballXSpeed *= -1;
+      ballXSpeed -= 1;
     };
+  } else if (regular == true){
+  if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
+      ballXSpeed *= -1;
+      ballXSpeed += 2;
+    };
+    if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
+      ballXSpeed *= -1;
+      ballXSpeed -= 2;
+    };
+  } else if (fast == true){
+  if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
+      ballXSpeed *= -1;
+      ballXSpeed += 3;
+    };
+    if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
+      ballXSpeed *= -1;
+      ballXSpeed -= 3;
+    };
+  };
     };
   };
   void score() {
@@ -137,11 +159,11 @@ class ball {
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
       if(slow == true){
-      ballSpeed = 3;
+      ballXSpeed = 3;
       }else if(regular == true){
-      ballSpeed = 4;
+      ballXSpeed = 4;
       }
-      else if( fast == true){ballSpeed = 6;};
+      else if( fast == true){ballXSpeed = 6;};
       //Ball[0].ballXSpeed = int(random(-7, 7));
       //while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
       while (Ball[0].ballYSpeed == 0)Ball[0].ballYSpeed = int(random(-6, 6));
@@ -152,11 +174,11 @@ class ball {
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
        if(slow == true){
-      ballSpeed = 3;
+      ballXSpeed = 3;
       }else if(regular == true){
-      ballSpeed = 4;
+      ballXSpeed = 4;
       }
-      else if( fast == true){ballSpeed = 6;};
+      else if( fast == true){ballXSpeed = 6;};
      //Ball[0].ballXSpeed = int(random(-7, 7));
      // while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
       while (Ball[0].ballYSpeed == 0)Ball[0].ballYSpeed = int(random(-6, 6));
@@ -185,11 +207,10 @@ class ball {
 //};
 //  };
 
-if(dist(Ball[0].ballX,Ball[0].ballY,ball1X,ball1Y) < ball1Diameter/2 + Ball[0].ballDiameter/2){
-  ballSpeed *= -1;
-  Ball[0].ballYSpeed *= -1;
-  println("hello");
-  
+if(dist(Ball[0].ballX,Ball[0].ballY,ball1X,ball1Y) <= ball1Diameter/2 + Ball[0].ballDiameter/2){
+  Ball[0].ballXSpeed *= -1;
+  //Ball[0].ballYSpeed *= -1;
+  //println("hello");
 };
 };
 

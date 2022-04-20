@@ -26,7 +26,7 @@ void setup() {
   //size(500,1000);
 left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   right = new Scoreboard(width*3/4, height*0, width/10, height/8, 0);
-  Ball[counter] = new ball(displayWidth, displayHeight);
+  
   dark = new rules(0,height - height/20,width/6,height/20,"Dark Mode",#FF00FF);
   screenSaver = new rules(width-(width/6), height-(height/20),width/6,height/20,"ScreenSaver", #FF00FF);
   for(int i = 0;i <fireWorkr.length;i++){
@@ -37,7 +37,7 @@ left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   lPaddle1 = new rules(width/10, height*4/10, width/4,width/20, "Slow",#0000FF);
   lPaddle2 = new rules(width/10, height*5/10, width/4,width/20, "Regular",#FF7000);
   lPaddle3 = new rules(width/10, height*6/10, width/4,width/20, "Fast",#FF0000);
-  bSpeed = new rules(width/2 - lPaddle.rectWidth/2, height*3/10, width/4 ,width/20, "Ball Speed", #FF00FF);
+  bSpeed = new rules(width/2 - lPaddle.rectWidth/2, height*3/10, width/4 ,width/20, "Ball Speed Increase", #FF00FF);
   bSpeed1 = new rules(width/2 - lPaddle.rectWidth/2, height*4/10, width/4 ,width/20, "Slow", #0000FF);
   bSpeed2 = new rules(width/2 - lPaddle.rectWidth/2, height*5/10, width/4 ,width/20, "Normal", #FF7000);
   bSpeed3 = new rules(width/2 - lPaddle.rectWidth/2, height*6/10, width/4 ,width/20, "Fast", #FF0000);
@@ -54,7 +54,11 @@ left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   rightGoal = new line(paddle.paddleRX, height*0, paddle.paddleRX, height);
   leftGoal = new line(paddle.paddleLX, height*0, paddle.paddleLX, height);
   starSetup();
+ 
+   Ball[counter] = new ball(displayWidth, displayHeight,3);
+ 
   counter += 1;
+ 
 };
 
 void draw() {
@@ -62,7 +66,7 @@ void draw() {
 
   if (width > height) {
     if(rules == false && leftPaddle == true && rightPaddle == true && startScreen == false && ball == true){
-      //println(Ball[0].ballXSpeed);
+      println(Ball[0].ballXSpeed);
       //println(ballSpeed);
     gameStart();
     }
@@ -116,7 +120,7 @@ void mousePressed() {
   if (counter < 10) {
     counter+= 1;
     for (int i = counter-1; i < counter; i++) {
-      Ball[i] = new ball(displayWidth, displayHeight);
+      Ball[i] = new ball(displayWidth, displayHeight,ballSpeed);
     }
   } else counter = 1;
   };

@@ -7,8 +7,7 @@ class fireWorks {
  fireX = Width;
  fireY = Height;
  fireDiameter = random(width/15);
- Color = int(random(255));
- 
+ Color = color(int(random(255)), int(random(255)),int(random(255)));
  xSpeed = random(-6,6);
  ySpeed = random(-6,6);
  gravity = 0.5;
