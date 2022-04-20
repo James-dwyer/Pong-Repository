@@ -46,7 +46,7 @@ left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   rPaddle2 = new rules(width-lPaddle.rectX-lPaddle.rectWidth,height*5/10, width/4,width/20,"Regular",#FF7000);
   rPaddle3 = new rules(width-lPaddle.rectX-lPaddle.rectWidth,height*6/10, width/4,width/20,"Fast",#FF0000);
   rule  = new rules(width/5,height/15,width*3/5,height*2/15,"Score 3 Goals To Win The Game!",#FF00FF);
-  start = new rules(width*3/10, height*5/7,width*2/5,height/8, "To Start The Game Click HERE!",#FF00FF);
+  start = new rules(width*3/10, height*5/7,width*2/5,height/8, "To Start The Game Click HERE! Press Q anytime to Quit",#FF00FF);
   lWin = new Rectangle(width*1/2, height/4, width/3, height/10,"Left Player Wins");  
   rWin = new Rectangle(width*1/2, height/4, width/3,height/10,"Right Player Wins");
   midLine = new line(width/2, height*0, width/2, height);
@@ -88,6 +88,9 @@ void keyPressed() {
   };
   if (key == 's' || key == 'S') {
     paddle.lPaddleSpeed = paddleSpeed;
+  };
+  if(key == 'q' || key == 'Q'){
+  exit();
   };
 };
 
