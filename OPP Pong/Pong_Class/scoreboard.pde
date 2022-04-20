@@ -24,7 +24,7 @@ class Scoreboard {
 
   void draw() {
 
-    fill(0);
+    if(darkMode == false){ fill(black);} else fill(grey);
     text(str(score), sbX, sbY, sbWidth, sbHeight);
  
   };

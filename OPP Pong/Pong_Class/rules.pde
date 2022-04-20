@@ -71,5 +71,10 @@ void ruleScreen(){
   rPaddle2.draw();
   rPaddle3.draw();
   screenSaver.draw();
+  dark.draw();
+  bSpeed.draw();
+  bSpeed1.draw();
+  bSpeed2.draw();
+  bSpeed3.draw();
   
 };

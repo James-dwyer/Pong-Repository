@@ -8,8 +8,13 @@ class ball {
     ballY = int(Height/2);
     ballDiameter = int(Width/75);
     ballColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 255)));
-    while (ballXSpeed == 0)ballXSpeed = int(random(-5, 5));
+    //ballXSpeed = int(ballSpeed);
+  
+      //while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
+ 
+    
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
+    
   };
   ball(float Width, float Height, float Diameter){
   ball1X = int(Width);
@@ -21,7 +26,7 @@ class ball {
   void draw() {
     fill(ballColor);
     ellipse(ballX, ballY, ballDiameter, ballDiameter);
-    fill(0);
+   if(darkMode == false){ fill(black);} else fill(grey);
 
     move();
     bounce();
@@ -33,7 +38,7 @@ class ball {
     
   fill(90);
     ellipse(ball1X, ball1Y, ball1Diameter, ball1Diameter);
-    fill(0);
+   if(darkMode == false){ fill(black);} else fill(grey);
     ballBounce();
 
 
@@ -41,7 +46,7 @@ class ball {
   };
 
   void move() {
-    ballX += ballXSpeed;
+    ballX += ballSpeed;
     ballY += ballYSpeed;
   };
 
@@ -53,13 +58,27 @@ class ball {
     //if(ballX+ballDiameter/2 >= paddle.paddleLX-paddle.paddleLWidth && ballY >= paddle.paddleLY && ballY <= paddle.paddleLY-paddle.paddleLHeight){
     //  ballXSpeed *= -1;
     //};
-    if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
-      ballXSpeed *= -1;
-      ballXSpeed += 1;
+       if(ballSpeed == 20 || ballSpeed == -20){
+      if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
+      ballSpeed *= -1;
+      ballSpeed = 20;
+      ballYSpeed = int(random(-6, 6));
     };
     if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
-      ballXSpeed *= -1;
-      ballXSpeed -= 1;
+      ballSpeed *= -1;
+      ballSpeed = -20;
+      ballYSpeed = int(random(-6, 6));
+    };
+    }
+    else{
+    if (ballX-ballDiameter/2 <= paddle.paddleLX+paddle.paddleLWidth && ballY >= paddle.paddleLY-paddle.paddleLHeight/2 && ballY <= paddle.paddleLY+paddle.paddleLHeight/2) {
+      ballSpeed *= -1;
+      ballSpeed += 1;
+    };
+    if (ballX+ballDiameter/2 >= paddle.paddleRX-paddle.paddleLWidth && ballY >= paddle.paddleRY-paddle.paddleRHeight/2 && ballY <= paddle.paddleRY+paddle.paddleRHeight/2) {
+      ballSpeed *= -1;
+      ballSpeed -= 1;
+    };
     };
   };
   void score() {
@@ -69,6 +88,24 @@ class ball {
       //paddle.paddleRY = height/2+paddle.paddleRHeight/2;
       paddle.paddleLY = height/2;
       paddle.paddleRY = height/2;
+     rGoal = true;
+      
+    };
+        if(rGoal == true){
+     
+    for(int i = 0;i <fireWorkr.length;i++){
+        fireWorkr[i].draw();
+      };
+      if(fireWorkr[fireWorkr.length-1].fireY > height){
+      rGoal = false;
+      for(int i = 0;i <fireWorkr.length;i++){
+        fireWorkr[i].fireY = 0;
+        fireWorkr[i].ySpeed = random(-5,5);
+      };
+      
+    
+      ;
+      }
     };
     if (ballX+ballDiameter/2 > rightGoal.lineX) {
       left.score = int(left.score += 1);
@@ -76,6 +113,22 @@ class ball {
       //paddle.paddleRY = displayHeight*0+paddle.paddleRHeight/2;
       paddle.paddleLY = height/2;
       paddle.paddleRY = height/2;
+     lGoal = true;
+    };
+    if(lGoal == true){
+     
+    for(int i = 0;i <fireWorkl.length;i++){
+        fireWorkl[i].draw();
+      };
+      if(fireWorkl[fireWorkl.length-1].fireY > height){
+      lGoal = false;
+       for(int i = 0;i <fireWorkl.length;i++){
+        fireWorkl[i].fireY = 0;
+      fireWorkl[i].ySpeed = random(-5,5);
+      };
+      
+      ;
+      }
     };
     if (ballX-ballDiameter/2 < leftGoal.lineX) {
       //counter = 1;
@@ -83,16 +136,29 @@ class ball {
       counter = 1;
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
-      Ball[0].ballXSpeed = int(random(-7, 7));
-      while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
+      if(slow == true){
+      ballSpeed = 3;
+      }else if(regular == true){
+      ballSpeed = 4;
+      }
+      else if( fast == true){ballSpeed = 6;};
+      //Ball[0].ballXSpeed = int(random(-7, 7));
+      //while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
       while (Ball[0].ballYSpeed == 0)Ball[0].ballYSpeed = int(random(-6, 6));
     }
     if (ballX+ballDiameter/2 > rightGoal.lineX) {
+      
       counter = 1;
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
-     Ball[0].ballXSpeed = int(random(-7, 7));
-      while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
+       if(slow == true){
+      ballSpeed = 3;
+      }else if(regular == true){
+      ballSpeed = 4;
+      }
+      else if( fast == true){ballSpeed = 6;};
+     //Ball[0].ballXSpeed = int(random(-7, 7));
+     // while (Ball[0].ballXSpeed == 0)Ball[0].ballXSpeed = int(random(-7, 7));
       while (Ball[0].ballYSpeed == 0)Ball[0].ballYSpeed = int(random(-6, 6));
     }
     if (left.score == 3) {
@@ -120,13 +186,12 @@ class ball {
 //  };
 
 if(dist(Ball[0].ballX,Ball[0].ballY,ball1X,ball1Y) < ball1Diameter/2 + Ball[0].ballDiameter/2){
-  Ball[0].ballXSpeed *= -1;
+  ballSpeed *= -1;
   Ball[0].ballYSpeed *= -1;
   println("hello");
   
 };
 };
-  
 
 
   };

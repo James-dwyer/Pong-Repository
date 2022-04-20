@@ -10,6 +10,7 @@ class line {
 
 
   void draw() {
+    if(darkMode == false){ stroke(black);} else stroke(grey);
     line(lineX, lineY, line1X, line1Y);
   };
 };
