@@ -3,7 +3,7 @@ class Paddle {
 
   float leftPaddleY;
   color pColor, pColor1;
-  float lPaddleSpeed, rPaddleSpeed;
+  float lPaddleSpeed = 0, rPaddleSpeed = 0;
 
 
   Paddle(float Width, float Height) {
@@ -36,12 +36,17 @@ class Paddle {
 
 
   void move() {
+    if(startScreen ==  true){ 
+      paddleLY = Ball[0].ballY;
+      paddleRY = Ball[0].ballY;
+    };
     paddleLY += lPaddleSpeed;
     paddleRY += rPaddleSpeed;
     if (paddleLY-paddleLHeight/2 <= displayHeight*0)paddleLY = displayHeight*0+paddleLHeight/2;
     if (paddleLY+paddleLHeight/2 >= displayHeight)paddleLY = displayHeight-paddleLHeight/2;
     if (paddleRY-paddleRHeight/2 <= displayHeight*0) paddleRY = displayHeight*0+paddleRHeight/2;
     if (paddleRY+paddleRHeight/2 >= displayHeight)paddleRY = displayHeight-paddleRHeight/2;
+    
     //else if(paddleLY+paddleLHeight > height){
     //  paddleLY = height - paddleLHeight;
     //};
