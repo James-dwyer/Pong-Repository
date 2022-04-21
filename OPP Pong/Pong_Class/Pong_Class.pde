@@ -9,6 +9,7 @@ boolean Win = false, rGoal = false, lGoal = false;
 boolean leftWin = false, rightWin = false, rules = true, leftPaddle = false, rightPaddle = false, startScreen = false, darkMode = false, ball = false, slow = false, regular = false, fast = false;
 ball[] Ball = new ball[10];
 ball[] Star = new ball[starNum];
+Trail trail;
 int counter = Ball.length - Ball.length; 
 line leftGoal, midLine, rightGoal;
 Paddle paddle;
@@ -24,6 +25,7 @@ void setup() {
   Height = height;
   Diameter = width;
   //size(500,1000);
+  
   left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   right = new Scoreboard(width*3/4, height*0, width/10, height/8, 0);
   Ball[counter] = new ball(displayWidth, displayHeight, int(random(-7,7)));
@@ -35,6 +37,7 @@ void setup() {
   for (int i = 0; i <fireWorkl.length; i++) {
     fireWorkl[i] = new fireWorks(width*1/4, height*0);
   };
+  trail = new Trail(Ball[0].ballX,Ball[0].ballY);
   lPaddle = new rules(width/10, height*3/10, width/4, width/20, "Left: W and S", #FF00FF);
   lPaddle1 = new rules(width/10, height*4/10, width/4, width/20, "Slow", #0000FF);
   lPaddle2 = new rules(width/10, height*5/10, width/4, width/20, "Regular", #FF7000);
