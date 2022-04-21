@@ -11,7 +11,7 @@ class ball {
     ballXSpeed = bSpeed;
     //ballSpeed = ballSpeed;
 
-    //while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
+    while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
 
 
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
@@ -155,6 +155,7 @@ class ball {
       counter = 1;
       Ball[0].ballX = width/2;
       ballYSpeed = int(random(-6, 6));
+      
       if (slow == true) {
         ballXSpeed = 3;
       } else if (regular == true) {

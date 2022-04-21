@@ -26,7 +26,7 @@ void setup() {
   //size(500,1000);
   left = new Scoreboard(width*1/4, height*0, width/10, height/8, 0);
   right = new Scoreboard(width*3/4, height*0, width/10, height/8, 0);
-
+  Ball[counter] = new ball(displayWidth, displayHeight, int(random(-7,7)));
   dark = new rules(0, height - height/20, width/6, height/20, "Dark Mode", #FF00FF);
   screenSaver = new rules(width-(width/6), height-(height/20), width/6, height/20, "ScreenSaver", #FF00FF);
   for (int i = 0; i <fireWorkr.length; i++) {
@@ -57,7 +57,7 @@ void setup() {
   leftGoal = new line(paddle.paddleLX, height*0, paddle.paddleLX, height);
   starSetup();
 
-  Ball[counter] = new ball(displayWidth, displayHeight, 3);
+  
 
   counter += 1;
 };
@@ -70,9 +70,10 @@ void draw() {
   if (width > height) {
     if (rules == false && leftPaddle == true && rightPaddle == true && startScreen == false && ball == true) {
       println(Ball[0].ballXSpeed);
-      //println(ballSpeed);
+      
       gameStart();
     } else if (startScreen == true) {
+      regular = true;
       gameStart();
     } else ruleScreen();
   } else {
