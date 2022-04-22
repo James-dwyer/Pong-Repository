@@ -22,6 +22,9 @@ class Rectangle {
   };
   void draw() {
     //stroke(0);
+    for(int i = 0; i < fireWorkW.length; i ++){
+    fireWorkW[i].draw();
+  };
     fill(255);
     rect(winX, winY, winWidth, winHeight);
     fill(#FF00FF);

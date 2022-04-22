@@ -19,11 +19,13 @@ Rectangle lWin, rWin;
 rules rule, lPaddle, lPaddle1, lPaddle2, lPaddle3, rPaddle, rPaddle1, rPaddle2, rPaddle3, start, screenSaver, dark, bSpeed, bSpeed1, bSpeed2, bSpeed3;
 fireWorks[] fireWorkl = new fireWorks[15];
 fireWorks[] fireWorkr = new fireWorks[15];
+fireWorks[] fireWorkW = new fireWorks[40];
 
 void setup() {
   fullScreen();
   smooth();
   noStroke();
+  frameRate(100);
   Width = width;
   Height = height;
   Diameter = width;
@@ -39,6 +41,9 @@ void setup() {
   };
   for (int i = 0; i <fireWorkl.length; i++) {
     fireWorkl[i] = new fireWorks(width*1/4, height*0);
+  };
+  for(int i = 0; i < fireWorkW.length; i ++){
+  fireWorkW[i] = new fireWorks(width/2,Height*0);
   };
  
   

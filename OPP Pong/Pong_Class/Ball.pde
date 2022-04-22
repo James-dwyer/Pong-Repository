@@ -193,6 +193,9 @@ class ball {
       left.score = (int(left.score = 0));
       right.score = int(right.score = 0);
     };
+    
+    
+    
   };
 
   void ballBounce() {

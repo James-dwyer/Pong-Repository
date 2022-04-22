@@ -8,9 +8,7 @@ void gameStart() {
     for (int i = 0; i < Star.length; i++) {
       Star[i].starDraw();
     };
-    for(int i = 0; i< trailNum; i++){
-    trail[i].draw();
-    };
+   //println(frameRate);
     leftGoal.draw();
     midLine.draw();
     rightGoal.draw();
